@@ -31,6 +31,7 @@ export const en = {
     },
     about: {
         title: 'About Me',
+        name: 'Ian Axel',
         description: "I'm a developer who enjoys building products that feel polished and intuitive. Outside of coding, I like exploring new technologies, reading, and working on side projects that challenge the way I think and solve problems.",
     },
     contact: {

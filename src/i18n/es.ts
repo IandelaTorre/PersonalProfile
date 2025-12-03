@@ -30,8 +30,9 @@ export const es = {
         title: 'Educación y Cursos',
     },
     about: {
-        title: 'Sobre mí',
-        description: "Soy un desarrollador al que le gusta construir productos que se sientan pulidos e intuitivos. Fuera del código, disfruto explorar nuevas tecnologías, leer y trabajar en proyectos personales que me reten a pensar y resolver problemas de manera diferente.",
+        title: 'Sobre Mí',
+        name: 'Ian Axel',
+        description: "Soy un desarrollador que disfruta construyendo productos que se sienten pulidos e intuitivos. Fuera de la programación, me gusta explorar nuevas tecnologías, leer y trabajar en proyectos personales que desafían mi forma de pensar y resolver problemas.",
     },
     contact: {
         title: 'Contacto',
