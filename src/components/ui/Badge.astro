@@ -1,0 +1,26 @@
+---
+interface Props {
+  label: string;
+  color?: 'blue' | 'gray' | 'teal' | 'red' | 'yellow' | 'purple';
+  class?: string;
+}
+
+const { label, color = 'blue', class: className } = Astro.props;
+
+const colorClasses = {
+  blue: "bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500",
+  gray: "bg-gray-100 text-gray-800 dark:bg-white/10 dark:text-white",
+  teal: "bg-teal-100 text-teal-800 dark:bg-teal-800/30 dark:text-teal-500",
+  red: "bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500",
+  yellow: "bg-yellow-100 text-yellow-800 dark:bg-yellow-800/30 dark:text-yellow-500",
+  purple: "bg-purple-100 text-purple-800 dark:bg-purple-800/30 dark:text-purple-500",
+};
+---
+
+<span class:list={[
+  "inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium",
+  colorClasses[color],
+  className
+]}>
+  {label}
+</span>

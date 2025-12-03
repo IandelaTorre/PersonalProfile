@@ -1,0 +1,56 @@
+---
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const education = [
+  {
+    degree: 'B.S. Computer Science',
+    school: 'University of Technology',
+    year: '2016 - 2020',
+    type: 'Formal'
+  },
+  {
+    degree: 'Advanced iOS Development',
+    school: 'Udacity Nanodegree',
+    year: '2021',
+    type: 'Course'
+  },
+  {
+    degree: 'Full Stack Open',
+    school: 'University of Helsinki',
+    year: '2022',
+    type: 'Course'
+  }
+];
+---
+
+<section id="education" class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+    <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">{t('education.title')}</h2>
+  </div>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {education.map((item) => (
+      <div class="flex flex-col bg-white border border-gray-200 shadow-sm rounded-xl p-4 md:p-5 dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+        <div class="mb-auto">
+            <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-white/10 dark:text-white mb-3">
+                {item.type}
+            </span>
+            <h3 class="text-lg font-bold text-gray-800 dark:text-white">
+                {item.degree}
+            </h3>
+            <p class="mt-1 text-gray-500 dark:text-neutral-400">
+                {item.school}
+            </p>
+        </div>
+        <div class="mt-4 pt-4 border-t border-gray-100 dark:border-neutral-800">
+            <p class="text-sm text-gray-500 dark:text-neutral-500">
+                {item.year}
+            </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

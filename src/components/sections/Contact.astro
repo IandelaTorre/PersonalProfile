@@ -1,0 +1,28 @@
+---
+import Button from '../ui/Button.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="contact" class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+    <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">{t('contact.title')}</h2>
+  </div>
+
+  <div class="flex flex-col sm:flex-row justify-center gap-4">
+    <Button href="https://linkedin.com" target="_blank" rel="noopener noreferrer" variant="primary">
+      LinkedIn
+    </Button>
+    <Button href="https://github.com" target="_blank" rel="noopener noreferrer" variant="secondary">
+      GitHub
+    </Button>
+    <Button href="#" variant="outline">
+      App Store
+    </Button>
+    <Button href="#" variant="ghost">
+      Download CV
+    </Button>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectsSection from '../components/sections/Projects.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={`Ian Axel - ${t('nav.projects')}`}>
+  <div class="pt-10">
+    <ProjectsSection />
+  </div>
+</BaseLayout>
