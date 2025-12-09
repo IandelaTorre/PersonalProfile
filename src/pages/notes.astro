@@ -8,26 +8,41 @@ const t = useTranslations(lang);
 
 const notes = [
   {
-    title: lang === 'en' ? 'Understanding Swift Concurrency' : 'Entendiendo la Concurrencia en Swift',
-    date: '2023-10-15',
-    excerpt: lang === 'en' 
-      ? 'A deep dive into async/await and actors in Swift 5.5+.' 
-      : 'Una inmersión profunda en async/await y actores en Swift 5.5+.'
+    title: t('notes.note1.title'),
+    date: t('notes.note1.date'),
+    excerpt: t('notes.note1.excerpt'),
+    link: "https://medium.com/@Rutik_Maraskolhe/the-future-of-swiftui-development-from-architecture-choices-to-ai-integration-c6c714d505a4",
   },
   {
-    title: lang === 'en' ? 'Clean Architecture in iOS' : 'Arquitectura Limpia en iOS',
-    date: '2023-09-22',
-    excerpt: lang === 'en'
-      ? 'How to implement Clean Architecture with MVVM and Coordinators.'
-      : 'Cómo implementar Arquitectura Limpia con MVVM y Coordinators.'
+    title: t('notes.note2.title'),
+    date: t('notes.note2.date'),
+    excerpt: t('notes.note2.excerpt'),
+    link: "https://gptzone.net/noticias/apple-presenta-xcode-26-con-ia-nativa-chatgpt-y-live-translation-para-desarrolladores/",
   },
   {
-    title: lang === 'en' ? 'NestJS Best Practices' : 'Mejores Prácticas en NestJS',
-    date: '2023-08-10',
-    excerpt: lang === 'en'
-      ? 'Tips for building scalable and maintainable backend services.'
-      : 'Consejos para construir servicios backend escalables y mantenibles.'
-  }
+    title: t('notes.note3.title'),
+    date: t('notes.note3.date'),
+    excerpt: t('notes.note3.excerpt'),
+    link: "https://www.seidor.com/es-mx/blog/importancia-arquitecturas-modulares-aplicaciones-moviles",
+  },
+  {
+    title: t('notes.note4.title'),
+    date: t('notes.note4.date'),
+    excerpt: t('notes.note4.excerpt'),
+    link: "https://www.youtube.com/watch?v=9vkkJ4tC4SQ",
+  },
+  {
+    title: t('notes.note5.title'),
+    date: t('notes.note5.date'),
+    excerpt: t('notes.note5.excerpt'),
+    link: "https://refactoring.guru/es/design-patterns",
+  },
+  {
+    title: t('notes.note6.title'),
+    date: t('notes.note6.date'),
+    excerpt: t('notes.note6.excerpt'),
+    link: "https://www.codewars.com/dashboard",
+  },
 ];
 ---
 
@@ -39,7 +54,7 @@ const notes = [
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {notes.map((note) => (
-        <Card href="#" class="h-full">
+        <Card href={note.link} target='_blank' class="h-full">
           <div class="flex flex-col h-full p-4">
             <h3 class="text-lg font-bold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-500">
               {note.title}
@@ -47,13 +62,11 @@ const notes = [
             <p class="mt-1 text-xs text-gray-500 dark:text-neutral-500">
               {note.date}
             </p>
-            <p class="mt-3 text-gray-600 dark:text-neutral-400 flex-grow">
+            <p class="mt-3 text-justify text-gray-600 dark:text-neutral-400 flex-grow">
               {note.excerpt}
             </p>
             <div class="mt-4">
-                <span class="text-blue-600 dark:text-blue-500 text-sm font-medium hover:underline">
-                    {lang === 'en' ? 'Read more' : 'Leer más'}
-                </span>
+                <span class="text-blue-600 dark:text-blue-500 text-sm font-medium hover:underline">{t('notes.more.title')}</span>
             </div>
           </div>
         </Card>

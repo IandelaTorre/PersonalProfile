@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { Image } from 'astro:assets';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -12,35 +13,75 @@ const t = useTranslations(lang);
       <div class="space-y-5 md:space-y-8">
         <div class="space-y-3">
           <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.title')}</h2>
-          <p class="text-lg text-gray-800 dark:text-neutral-200">
-            {lang === 'en' 
-              ? "Hello! I'm Ian Axel, a passionate iOS and Full-Stack developer based in [Location]. My journey in tech started with..." 
-              : "¡Hola! Soy Ian Axel, un apasionado desarrollador iOS y Full-Stack basado en [Ubicación]. Mi viaje en la tecnología comenzó con..."}
-          </p>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.presentation.p1')}</p>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.presentation.p2')}</p>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.presentation.p3')}</p>
         </div>
 
-        <p class="text-lg text-gray-800 dark:text-neutral-200">
-          {lang === 'en'
-            ? "I specialize in building high-quality mobile applications using Swift and SwiftUI, but I also love working on the backend with NestJS and creating web experiences with React."
-            : "Me especializo en construir aplicaciones móviles de alta calidad usando Swift y SwiftUI, pero también me encanta trabajar en el backend con NestJS y crear experiencias web con React."}
-        </p>
-
-        <figure>
-          <img class="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1671726203454-488ab18f7eda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Workspace">
-          <figcaption class="mt-3 text-sm text-center text-gray-500 dark:text-neutral-500">
-            {lang === 'en' ? 'My workspace' : 'Mi espacio de trabajo'}
-          </figcaption>
-        </figure>
+        <div class="space-y-3">
+          <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.myPath.title')}</h2>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.myPath.p1')}</p>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.myPath.p2')}</p>
+        </div>
 
         <div class="space-y-3">
-            <h3 class="text-2xl font-semibold dark:text-white">
-                {lang === 'en' ? 'Beyond Coding' : 'Más allá del código'}
-            </h3>
-            <p class="text-lg text-gray-800 dark:text-neutral-200">
-                {lang === 'en'
-                  ? "When I'm not coding, you can find me..."
-                  : "Cuando no estoy programando, puedes encontrarme..."}
-            </p>
+          <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.howIWork.title')}</h2>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.howIWork.p1')}</p>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.howIWork.p2')}</p>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.howIWork.p3')}</div>
+
+        <div class="space-y-10">
+          <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.beyondCode.title')}</h2>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.beyondCode.p1')}</p>
+
+          <div class="grid md:grid-cols-2 gap-6 items-center">
+            <div class="space-y-4">
+              <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.beyondCode.p2')}</p>
+            </div>
+            <figure>
+              <video class="w-full object-cover rounded-xl" src="/futbol.mp4" autoplay loop muted playsinline></video>
+              <figcaption class="mt-3 text-sm text-center text-gray-500 dark:text-neutral-500">
+                {t('about.beyondCode.caption1')}
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6 items-center">
+            <figure class="order-1 md:order-none">
+              <Image height={30} width={30} class="w-full object-cover rounded-xl" src="/beis-diablos.webp" alt="Diablos Rojos" />
+              <figcaption class="mt-3 text-sm text-center text-gray-500 dark:text-neutral-500">
+                Diablos Rojos del México
+              </figcaption>
+            </figure>
+            <div class="space-y-4">
+              <p class="text-lg text-justify text-gray-800 dark:text-neutral-200"> {t('about.beyondCode.p3')}</p>
+            </div>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-6 items-center">
+            <div class="space-y-4">
+              <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.beyondCode.p4')}</p>
+            </div>
+            <figure>
+              <Image height={30} width={30} class="w-full object-cover rounded-xl" src="/malinche.webp" alt="La Malinche" />
+              <figcaption class="mt-3 text-sm text-center text-gray-500 dark:text-neutral-500">
+                La Malinche - Tlaxcala, México.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.lookingFor.title')}</h2>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.lookingFor.p1')}</p>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">
+            <ul class="list-disc list-inside space-y-2 text-lg text-gray-800 dark:text-neutral-200">
+              <li class="text-justify">{t('about.lookingFor.l1')}</li>
+              <li class="text-justify">{t('about.lookingFor.l2')}</li>
+              <li class="text-justify">{t('about.lookingFor.l3')}</li>
+            </ul>
+          </p>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.lookingFor.p2')}</p>
         </div>
       </div>
     </div>
