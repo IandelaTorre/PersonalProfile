@@ -2,14 +2,16 @@
 interface Props {
   class?: string;
   href?: string;
+  target?: string;
 }
 
-const { class: className, href } = Astro.props;
+const { class: className, href, target } = Astro.props;
 const Tag = href ? 'a' : 'div';
 ---
 
 <Tag 
   href={href}
+  target={target}
   class:list={[
     "flex flex-col bg-white border border-gray-200 shadow-sm rounded-xl p-4 md:p-5 dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70",
     href && "hover:shadow-lg hover:scale-[1.02] transition-all duration-300 cursor-pointer",

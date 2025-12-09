@@ -64,6 +64,41 @@ export const es = {
             p2: "Si te gustaría revisar mis proyectos o saber más sobre cómo trabajo, puedes visitar la sección de proyectos o contactarme a través de mis redes sociales. ",
         }
     },
+    notes: {
+        note1: {
+            title: "The Future of SwiftUI Development: From Architecture Choices to AI Integration",
+            date: "Aug 11, 2025",
+            excerpt: "Este artículo reciente resume tendencias en la comunidad iOS, como la evolución de patrones arquitectónicos en SwiftUI. Por ejemplo, cuestiona el uso extensivo de MVVM en cada vista, señalando que puede añadir complejidad innecesaria; en su lugar, SwiftUI permite inyectar servicios globalmente vía @Environment para evitar ViewModels redundantes y mantener las vistas más simples. ",
+        },
+        note2: {
+            title: "Apple Presenta Xcode 26 con IA Nativa, ChatGPT y Live Translation para Desarrolladores",
+            date: "Jun 10, 2025",
+            excerpt: "Este artículo resume las novedades para Xcode 26, que incluyen integración nativa con IA y ChatGPT para ayudar a los desarrolladores a escribir código más rápido y con menos errores. También se destaca la función de traducción en vivo, que facilita la localización de aplicaciones para múltiples idiomas directamente desde el IDE.",
+        },
+        note3: {
+            title: "La importancia de las arquitecturas modulares en las aplicaciones móviles",
+            date: "May 14, 2024",
+            excerpt: "Este artículo en español enfatiza por qué una buena arquitectura técnica es clave en proyectos móviles. Señala que a menudo se prioriza la experiencia de usuario y el diseño, descuidando la calidad del código; el resultado son apps que funcionan al inicio pero con el tiempo se vuelven difíciles de mantener y ampliar, volviéndose proyectos en los que 'nadie quiere trabajar'. ",
+        },
+        note4: {
+            title: "iOS App Store Submission Tutorial",
+            date: "Sept 8, 2025",
+            excerpt: "Este vídeo tutorial en YouTube ofrece una guía paso a paso sobre cómo preparar y enviar una aplicación iOS a la App Store. Cubre aspectos clave como la configuración del proyecto en Xcode, la creación de un perfil de aprovisionamiento, la generación de un archivo IPA y el uso de App Store Connect para gestionar la publicación y distribución de la app. ",
+        },
+        note5: {
+            title: "Patrones de diseño",
+            date: "Dec 5, 2025",
+            excerpt: "Esta página web ofrece una explicación muy completa de muchos patrones de diseño utilizado en el desarrollo de software, incluyendo ejemplos claros con ilustraciones y explicaciones paso a paso. Es un recurso valioso para desarrolladores que buscan entender cómo aplicar estos patrones en sus proyectos para mejorar la calidad y mantenibilidad del código. Si quieres aprender de patrones de diseño, esta es una referencia que tienes que consultar. ",
+        },
+        note6: {
+            title: "Codewars",
+            date: "Dec 5, 2025",
+            excerpt: "Esta plataforma en línea ofrece una amplia variedad de desafíos de programación (katas) que permiten a los desarrolladores mejorar sus habilidades en diferentes lenguajes de programación. Los usuarios pueden resolver problemas de diversos niveles de dificultad, desde principiantes hasta expertos, y comparar sus soluciones con las de otros miembros de la comunidad. Es una excelente manera de practicar y aprender nuevas técnicas de codificación mientras se compite amistosamente con otros programadores. ",
+        },
+        more: {
+            title: "Presiona para leer más",
+        }
+    },
     contact: {
         title: 'Contacto',
     },

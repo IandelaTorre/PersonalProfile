@@ -64,6 +64,41 @@ export const en = {
             p2: "If you’d like to explore my projects or learn more about how I work, feel free to check out the projects section or reach out through my social profiles.",
         }
     },
+    notes: {
+        note1: {
+            title: "The Future of SwiftUI Development: From Architecture Choices to AI Integration",
+            date: "Aug 11, 2025",
+            excerpt: "This recent article summarizes trends in the iOS community, such as the evolution of architectural patterns in SwiftUI. For example, it questions the extensive use of MVVM in each view, pointing out that it can add unnecessary complexity; instead, SwiftUI allows services to be injected globally via @Environment to avoid redundant ViewModels and keep views simpler. ",
+        },
+        note2: {
+            title: "Apple Presenta Xcode 26 con IA Nativa, ChatGPT y Live Translation para Desarrolladores",
+            date: "Jun 10, 2025",
+            excerpt: "This article summarizes the new features for Xcode 26, which include native integration with AI and ChatGPT to help developers write code faster and with fewer errors. It also highlights the live translation feature, which makes it easy to localize applications for multiple languages directly from the IDE. ",
+        },
+        note3: {
+            title: "La importancia de las arquitecturas modulares en las aplicaciones móviles",
+            date: "May 14, 2024",
+            excerpt: "This article in Spanish emphasizes why good technical architecture is key in mobile projects. It points out that user experience and design are often prioritized, neglecting code quality; the result is apps that work at first but over time become difficult to maintain and expand, turning into projects that 'no one wants to work on'. ",
+        },
+        note4: {
+            title: "iOS App Store Submission Tutorial",
+            date: "Sept 8, 2025",
+            excerpt: "This YouTube tutorial video offers a step-by-step guide on how to prepare and submit an iOS application to the App Store. It covers key aspects such as project setup in Xcode, creating a provisioning profile, generating an IPA file, and using App Store Connect to manage the app's publication and distribution. ",
+        },
+        note5: {
+            title: "Design Patterns",
+            date: "Dec 5, 2025",
+            excerpt: "This webpage provides a very comprehensive explanation of many design patterns used in software development, including clear examples with illustrations and step-by-step explanations. It’s a valuable resource for developers looking to understand how to apply these patterns in their projects to improve code quality and maintainability. If you want to learn about design patterns, this is a reference you have to check out. ",
+        },
+        note6: {
+            title: "Codewars",
+            date: "Dec 5, 2025",
+            excerpt: "This online platform offers a wide variety of programming challenges (katas) that allow developers to improve their skills in different programming languages. Users can solve problems of various difficulty levels, from beginners to experts, and compare their solutions with those of other community members. It’s an excellent way to practice and learn new coding techniques while competing friendly with other programmers. ",
+        },
+        more: {
+            title: "Click to read more",
+        }
+    },
     contact: {
         title: 'Contact',
     },
