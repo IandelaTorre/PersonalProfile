@@ -31,6 +31,8 @@ export const en = {
     },
     about: {
         title: 'About Me',
+        name: 'Ian Axel',
+        description: "I'm a developer who enjoys building products that feel polished and intuitive. Outside of coding, I like exploring new technologies, reading, and working on side projects that challenge the way I think and solve problems.",
         presentation: {
             p1: "Hello! I’m Ian Axel, an iOS and Full-Stack developer with experience building mobile apps and web solutions. I’m genuinely passionate about technology and how it can be used to solve real problems. ",
             p2: "Today I’m focused on developing iOS applications using Swift, UIKit, and SwiftUI, always looking to apply best practices, clean architectures, and design patterns that improve code quality and the overall user experience. ",
