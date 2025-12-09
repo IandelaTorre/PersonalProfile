@@ -12,68 +12,47 @@ const t = useTranslations(lang);
       <div class="space-y-5 md:space-y-8">
         <div class="space-y-3">
           <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.title')}</h2>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">
-            {lang === 'en' 
-              ? "Hello! I'm Ian Axel, a passionate iOS and Full-Stack developer based in [Location]. My journey in tech started with..." 
-              : "¡Hola! Soy Ian Axel, desarrollador iOS y Full-Stack con experiencia construyendo aplicaciones móviles y soluciones web. Me considero un apasionado por la tecnología. "}
-          </p>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">
-            {lang === 'en' 
-              ? "Hello! I'm Ian Axel, a passionate iOS and Full-Stack developer based in [Location]. My journey in tech started with..." 
-              : "Hoy estoy enfocado en el desarrollo de aplicaciones móviles para iOS utilizando Swift, UIKit y SwiftUI, buscando siempre utilizar buenas prácticas, arquitecturas limpias y patrones de diseño que mejoren la calidad del código y la experiencia del usuario. "}
-          </p>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">
-          {lang === 'en'
-            ? "Also love working on the backend with NestJS and creating web experiences with React."
-            : "También me encanta trabajar en el backend con NestJS y crear experiencias web con React. "}
-        </p>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.presentation.p1')}</p>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.presentation.p2')}</p>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.presentation.p3')}</p>
         </div>
 
         <div class="space-y-3">
-          <h2 class="text-2xl font-bold md:text-3xl dark:text-white">Mi camino hasta iOS</h2>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">
-            {lang === 'en' 
-              ? "Hello! I'm Ian Axel, a passionate iOS and Full-Stack developer based in [Location]. My journey in tech started with..." 
-              : "Empecé mi carrera en el desarrollo móvil trabajando con Android utilizando arquitecturas limpias con MVVM y patrones de diseño como Repository, Dependency Injection, Singleton, entre otros. Más tarde, decidí expandir mis horizontes y aprender el desarrollo hibrido con React Native, esto me duro poco tiempo ya que después me diferente situaciones terminé en el desarrollo web donde me he formado hasta hoy con vastos conocimientos en frontend y backend. "}
-          </p>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">
-            {lang === 'en' 
-              ? "Hello! I'm Ian Axel, a passionate iOS and Full-Stack developer based in [Location]. My journey in tech started with..." 
-              : "Hoy en día, me he decidido a especializarme en el desarrollo móvil para iOS, ya que siempre fue mi pasión el desarrollo móvil nativo y quiero que sea en la plataforma de Apple donde pueda crecer profesionalmente y aportar todo mi conocimiento en la creación de aplicaciones móviles de alta calidad. "}
-          </p>
+          <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.myPath.title')}</h2>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.myPath.p1')}</p>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.myPath.p2')}</p>
         </div>
 
         <div class="space-y-3">
-          <h2 class="text-2xl font-bold md:text-3xl dark:text-white">Cómo trabajo</h2>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">
-            {lang === 'en' 
-              ? "Hello! I'm Ian Axel, a passionate iOS and Full-Stack developer based in [Location]. My journey in tech started with..." 
-              : "Me gusta planificar bien las apps desde el comienzo, definiendo una arquitectura clara y escalable que facilite el mantenimiento y la evolución del proyecto a largo plazo. Empiezo entendiendo el problema, reduciendo la complejidad al dividirlo en partes manejables y priorizando las funcionalidades clave. En iOS he trabajo con diferentes patrones como MVVM y Coordinators, aplicando principios de Clean Architecture, combinados con Combine async/await con Alamofire. Como esto con la finalidad de tener un código limpio, modular y fácil de probar, así como flujos (de navegación y datos) bien definidos y claros. "}
-          </p>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">
-            {lang === 'en' 
-              ? "Hello! I'm Ian Axel, a passionate iOS and Full-Stack developer based in [Location]. My journey in tech started with..." 
-              : "Vengo de un contexto de desarrollo full-stack, así que estoy acostumbrado a trabajar cerca del backend, entendiendo cómo funcionan las APIs, revisando contratos de APIs, proponiendo cambios en busca de optimizaciones y pensar en rendimiento de extremo a extremo."}
-          </p>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">
-            {lang === 'en' 
-              ? "Hello! I'm Ian Axel, a passionate iOS and Full-Stack developer based in [Location]. My journey in tech started with..." 
-              : "Más allá del código, valoro la comunicación efectiva, el feedback y la colaboración en equipo. Creo que un buen desarrollador no solo escribe código, sino que también entiende las reglas de negocio y sabe comunicarse o trabajar con todas las partes del equipo como diseñadores, PO, otros desarrolladores, entre otros. Con el objetivo en conjunto de crear soluciones que realmente aporten valor. "}
-          </p>
+          <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.howIWork.title')}</h2>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.howIWork.p1')}</p>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.howIWork.p2')}</p>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.howIWork.p3')}</div>
+
+        <div class="space-y-3">
+          <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.beyondCode.title')}</h2>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.beyondCode.p1')}</p>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.beyondCode.p2')}</p>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.beyondCode.p3')}</p>
         </div>
 
         <div class="space-y-3">
-          <h2 class="text-2xl font-bold md:text-3xl dark:text-white"></h2>
+          <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.lookingFor.title')}</h2>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.lookingFor.p1')}</p>
           <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">
-            {lang === 'en' 
-              ? "Hello! I'm Ian Axel, a passionate iOS and Full-Stack developer based in [Location]. My journey in tech started with..." 
-              : ""}
+            <la>
+              <li>
+                <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.lookingFor.l1')}</p>
+              </li>
+              <li>
+                  <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.lookingFor.l2')}</p>
+              </li>
+              <li>
+                  <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.lookingFor.l3')}</p>
+              </li>
+            </la>
           </p>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">
-            {lang === 'en' 
-              ? "Hello! I'm Ian Axel, a passionate iOS and Full-Stack developer based in [Location]. My journey in tech started with..." 
-              : ""}
-          </p>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.lookingFor.p2')}</p>
         </div>
         
 
@@ -84,16 +63,6 @@ const t = useTranslations(lang);
           </figcaption>
         </figure>
 
-        <div class="space-y-3">
-            <h3 class="text-2xl font-semibold dark:text-white">
-                {lang === 'en' ? 'Beyond Coding' : 'Más allá del código'}
-            </h3>
-            <p class="text-lg text-gray-800 dark:text-neutral-200">
-                {lang === 'en'
-                  ? "When I'm not coding, you can find me..."
-                  : "Cuando no estoy programando, puedes encontrarme..."}
-            </p>
-        </div>
       </div>
     </div>
   </div>
