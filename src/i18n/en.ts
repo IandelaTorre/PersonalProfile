@@ -52,6 +52,8 @@ export const en = {
             p1: "When I’m not coding, I usually spend my time learning new technologies or exploring personal projects. I enjoy reading and watching content about software development, software architecture, design patterns, and new tools that can improve my workflow — and I try to bring many of those ideas into my projects or evaluate them as potential new products with an innovative twist. ",
             p2: "I also enjoy activities outside tech, like sports, video games, and music. These days I really like training at the gym and playing soccer with my team on weekends — it helps me clear my mind and stay disciplined in my daily routine. ",
             p3: "Another important part of my life is watching sports, especially baseball. Lately I’ve become a big fan of the sport, particularly of Diablos Rojos del México. It’s a very strategic game that keeps me engaged, and I’m always learning something new because the rules are so rich and detailed.",
+            p4: "Finally, a recently adopted activity is hiking, which has allowed me to clear my mind, appreciate the beauty of nature, and stay physically active. I climbed a mountain called 'La Malinche' in Tlaxcala, Mexico, and it was an incredible experience that motivated me to explore more hiking trails in the future. ",
+            caption1: "Soccer Team",
         },
         lookingFor: {
             title: "What I'm Looking For",
@@ -65,4 +67,8 @@ export const en = {
     contact: {
         title: 'Contact',
     },
+    footer: {
+        title: "iOS & Full-Stack Developer",
+        rights: "All rights reserved.",
+    }
 };

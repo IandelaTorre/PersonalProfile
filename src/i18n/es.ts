@@ -52,6 +52,8 @@ export const es = {
             p1: "Cuando no estoy programando, suelo invertir mi tiempo en aprender nuevas tecnologías o explorar proyectos personales. Me gusta leer y ver videos sobre desarrollo de software, arquitectuas de software, patrones de diseño y nuevas herramientas que puedan mejorar mi flujo de trabajo, y muchas de esas ideas trato de implementarlas en mis proyectos o evaluarlas como nuevos productos con un toque innovador.  ",
             p2: "También disfruto de actividades fuera del ámbito tecnológico, como el deporte, los videojuegos y la música. Hoy en día disfruto de entrenar en el gimnasio y jugar los fines de semana fútbol con mi equipo, porque me ayuda a mantener la mente clara y la disciplina en el día a día. ",
             p3: "Otra parte importante en mi vida es ver deportes pero más en especifico los juegos de beisbol, ya que ultimamente me he vuelto un gran fan de este deporte, especialmente de los diablos rojos del México. Es un deporte muy estratégico que me mantiene entretenido y en el cual siempre aprendo algo nuevo porque sus reglas son muy extensas. ",
+            p4: "Por último, una actividad que he adoptado recientemente es el senderismo, el cual me ha permitido despejar mi mente, ver la belleza de la naturaleza y mantenerme activo físicamente. Escale la montaña llamada 'La Malinche' en Tlaxcala, México, y fue una experiencia increíble que me motivó a seguir explorando más rutas de senderismo en el futuro. ",
+            caption1: "Equipo de fútbol",
         },
         lookingFor: {
             title: "Lo que estoy buscando",
@@ -64,5 +66,10 @@ export const es = {
     },
     contact: {
         title: 'Contacto',
+    },
+    footer: {
+        title: "Desarrollador iOS & Full-Stack",
+        rights: "Todos los derechos reservados.",
+
     },
 };
