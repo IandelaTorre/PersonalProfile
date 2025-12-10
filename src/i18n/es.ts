@@ -6,9 +6,10 @@ export const es = {
         notes: 'Notas',
     },
     hero: {
-        title: 'Desarrollador iOS & Full-Stack',
-        subtitle: 'Creando aplicaciones móviles pulidas y soluciones web robustas.',
-        ctaProjects: 'Ver Proyectos iOS',
+        title: 'Desarrollador iOS',
+        subtitle: 'Con conocimientos y experiencia en desarrollo Full-Stack. ',
+        ready: 'Disponible para nuevos retos. ',
+        ctaProjects: 'Ver Proyectos',
         ctaWeb: 'Ver Proyectos Web',
         ctaCV: 'Descargar CV',
     },
@@ -18,6 +19,7 @@ export const es = {
         frontend: 'Frontend Web',
         backend: 'Backend',
         tooling: 'Herramientas',
+        databases: 'Datos y Bases de Datos',
     },
     projects: {
         title: 'Proyectos Destacados',
