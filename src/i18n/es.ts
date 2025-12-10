@@ -23,7 +23,31 @@ export const es = {
     },
     projects: {
         title: 'Proyectos Destacados',
-        viewAll: 'Ver Todos',
+        viewAll: 'Ver proyectos relevantes',
+        proj1: {
+            title: 'TaskFlow',
+            description: 'Una aplicación para asignación de tareas entre usuarios, utilizando un diseño limpio y moderno con flujos claros. Se utilizan llamadas a API con Alamofire, inyección de dependencias y coordinadores. Utilizamos persistencia de datos para almacenar datos básicos del usuario y datos temporales para una respuesta más rápida. Construida con UIKit y MVVM. '
+        },
+        proj2: {
+            title: 'My Calculator',
+            description: 'Una aplicación de calculadora de operaciones básicas con evaluación en tiempo real, un modo de calculadora básica y otro modo para convertir unidades. Se utiliza un diseño simple, limpio y moderno utilizando UIKit y MVVM. ',
+        },
+        proj3: {
+            title: 'Coin Converter',
+            description: 'Una aplicación de conversión de monedas que utiliza una API pública para obtener las tasas de cambio en tiempo real. Incluye conversión en tiempo real, selección de monedas y esta construida con UIKit y MVVM. ',
+        },
+        proj4: {
+            title: 'Basic API',
+            description: "Backend construido con Prisma y Express, que ofrece endpoints para gestionar usuarios y tareas. Incluye autenticación JWT, gestión con logs, validación de datos y manejo de errores. Proyecto creado con la finalidad de tener mi propia API 'pública'. Diseñado para ser escalable y fácil de mantener. ",
+        },
+        proj5: {
+            title: 'Personal Website',
+            description: 'Página web personal construida con Astro y Tailwind CSS. Presenta secciones sobre mí, mi experiencia, proyectos destacados y un blog de notas técnicas. Optimizada para rendimiento, SEO y accesibilidad, con soporte para modo oscuro, diseño responsivo e idiomas. ',
+        },
+        proj6: {
+            title: 'Memorama App Android',
+            description: 'Aplicación de memorama para Android con diferentes niveles de dificultad, temporizador y sistema de puntuación. Construida con Android Studio, kotlin y utiliza SQLite para la persistencia de datos. Respaldos en la nube con Google Drive. ',
+        },
     },
     experience: {
         title: 'Experiencia',

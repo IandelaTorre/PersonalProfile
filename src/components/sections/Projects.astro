@@ -6,39 +6,186 @@ import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+type BadgeColor =
+  | "blue"
+  | "indigo"
+  | "purple"
+  | "pink"
+  | "red"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "green"
+  | "emerald"
+  | "teal"
+  | "cyan"
+  | "sky"
+  | "slate"
+  | "gray"
+  | "zinc"
+  | "neutral"
+  | "stone";
+
+// Mapa de colores por tipo de proyecto
+const typeColorMap: Record<string, BadgeColor> = {
+  iOS: "blue",
+  Frontend: "cyan",
+  Backend: "slate",
+  Android: "green",
+};
+
+// Mapa de tags -> color, alineado con tu TechStack
+const tagColorMap: Record<string, BadgeColor> = {
+  // iOS
+  Swift: "orange",
+  UIKit: "indigo",
+  Storyboards: "indigo",
+  "Stack Views": "indigo",
+  MVVM: "slate",
+  "Clean Architecture": "slate",
+  Coordinator: "slate",
+  Coordinators: "slate",
+  DI: "slate",
+  "Dependency Injection": "slate",
+  Alamofire: "red",
+  "Local Persistence": "green",
+  CoreData: "green",
+  "Unit Tests (XCTest)": "amber",
+
+  // Backend
+  JavaScript: "yellow",
+  Prisma: "purple",
+  PostgreSQL: "blue",
+  Express: "gray",
+  "REST API": "zinc",
+  "REST APIs": "zinc",
+  "JWT Auth": "zinc",
+  Supabase: "green",
+  Render: "gray",
+
+  // Frontend / Web
+  Astro: "orange",
+  "Tailwind CSS": "cyan",
+  TypeScript: "blue",
+  i18n: "stone",
+  GSAP: "green",
+  Markdown: "neutral",
+  Preline: "indigo",
+  Vercel: "gray",
+
+  // Android
+  Android: "green",
+  Kotlin: "purple",
+  SQLite: "blue",
+  "Google Drive API": "blue",
+  "Material Design": "pink",
+};
+
+function getTagColor(tag: string): BadgeColor {
+  return tagColorMap[tag] ?? "gray";
+}
+
 const projects = [
   {
-    title: "iOS Weather App",
-    description:
-      lang === "en"
-        ? "A clean, minimalist weather application built with SwiftUI using open weather APIs. Features include location-based forecasts, severe weather alerts, and beautiful animations."
-        : "Una aplicación del clima limpia y minimalista construida con SwiftUI usando APIs abiertas. Incluye pronósticos basados en ubicación, alertas de clima severo y hermosas animaciones.",
-    tags: ["Swift", "SwiftUI", "CoreLocation"],
-    image:
-      "https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&w=900&q=80",
+    title: "TaskFlow",
+    description: t("projects.proj1.description"),
+    tags: [
+      "Swift",
+      "UIKit",
+      "Storyboards",
+      "Alamofire",
+      "Clean Architecture",
+      "CoreData",
+      "Unit Tests (XCTest)",
+    ],
+    image: "/images/projects/taskflow-banner.png",
     type: "iOS",
+    url: "https://github.com/IandelaTorre/TaskFlow",
   },
   {
-    title: "E-commerce Dashboard",
-    description:
-      lang === "en"
-        ? "Full-stack admin dashboard for managing products, orders, and customers. Built with React, NestJS, and PostgreSQL. Includes real-time analytics and role-based access control."
-        : "Dashboard administrativo full-stack para gestionar productos, pedidos y clientes. Construido con React, NestJS y PostgreSQL. Incluye analíticas en tiempo real y control de acceso basado en roles.",
-    tags: ["React", "NestJS", "PostgreSQL", "Tailwind"],
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
-    type: "Full-Stack",
+    title: "My Calculator",
+    description: t("projects.proj2.description"),
+    tags: [
+      "Swift",
+      "UIKit",
+      "Storyboards",
+      "MVVM",
+      "DI",
+      "Unit Tests (XCTest)",
+      "Stack Views",
+      "Coordinator",
+    ],
+    image: "/images/projects/calculator-banner.png",
+    type: "iOS",
+    url: "https://github.com/IandelaTorre/MyCalculator",
   },
   {
-    title: "Task Manager",
-    description:
-      lang === "en"
-        ? "Productivity app focused on getting things done. Features include iCloud sync, custom categories, and dark mode support. Built with UIKit and CoreData."
-        : "App de productividad enfocada en completar tareas. Incluye sincronización con iCloud, categorías personalizadas y soporte para modo oscuro. Construida con UIKit y CoreData.",
-    tags: ["Swift", "UIKit", "CoreData"],
-    image:
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=900&q=80",
+    title: "Coin Converter",
+    description: t("projects.proj3.description"),
+    tags: [
+      "Swift",
+      "UIKit",
+      "Storyboards",
+      "MVVM",
+      "DI",
+      "Alamofire",
+      "Unit Tests (XCTest)",
+      "Local Persistence",
+    ],
+    image: "/images/projects/coin-converter-banner.png",
     type: "iOS",
+    url: "https://github.com/IandelaTorre/CoinConverter",
+  },
+  {
+    title: "Basic API",
+    description: t("projects.proj4.description"),
+    tags: [
+      "JavaScript",
+      "Prisma",
+      "PostgreSQL",
+      "Express",
+      "REST API",
+      "JWT Auth",
+      "Supabase",
+      "Render",
+    ],
+    image: "/images/projects/basic-api-banner.png",
+    type: "Backend",
+    url: "https://github.com/IandelaTorre/BasicAPI",
+  },
+  {
+    title: "Personal Website",
+    description: t("projects.proj5.description"),
+    tags: [
+      "Astro",
+      "Tailwind CSS",
+      "TypeScript",
+      "i18n",
+      "GSAP",
+      "Markdown",
+      "Preline",
+      "Vercel",
+    ],
+    image: "/images/projects/personal-website-banner.png",
+    type: "Frontend",
+    url: "https://github.com/IandelaTorre/PersonalProfile",
+  },
+  {
+    title: "Memorama App Android",
+    description: t("projects.proj6.description"),
+    tags: [
+      "Android",
+      "Kotlin",
+      "MVVM",
+      "SQLite",
+      "Google Drive API",
+      "Clean Architecture",
+    ],
+    image:
+      "/images/projects/memorama-android-banner.png",
+    type: "Android",
+    url: "https://github.com/IandelaTorre/ETSMemorama",
   },
 ];
 ---
@@ -60,7 +207,8 @@ const projects = [
     {
       projects.map((project) => (
         <Card
-          href="#"
+          href={project.url}
+          target="_blank"
           class="project-card h-full opacity-0 translate-y-12 scale-95"
         >
           <div class="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-xl">
@@ -72,19 +220,17 @@ const projects = [
           </div>
           <div class="flex flex-col h-full">
             <div class="flex justify-between items-center mb-2">
-              <Badge label={project.type} color="purple" />
+              <Badge label={project.type} color='gray' />
             </div>
             <h3 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-500">
               {project.title}
             </h3>
-            <p class="mt-3 text-gray-600 dark:text-neutral-400 flex-grow">
+            <p class="mt-3 text-justify text-gray-600 dark:text-neutral-400 flex-grow">
               {project.description}
             </p>
             <div class="mt-4 flex flex-wrap gap-2">
               {project.tags.map((tag) => (
-                <span class="inline-flex items-center gap-x-1.5 py-1 px-2 rounded-md text-xs font-medium bg-gray-100 text-gray-800 dark:bg-white/10 dark:text-white">
-                  {tag}
-                </span>
+                <Badge label={tag} color={getTagColor(tag)} />
               ))}
             </div>
           </div>

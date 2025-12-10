@@ -23,7 +23,31 @@ export const en = {
     },
     projects: {
         title: 'Featured Projects',
-        viewAll: 'View All Projects',
+        viewAll: 'View Relevant Projects',
+        proj1: {
+            title: 'TaskFlow',
+            description: 'A task management app where users can assign tasks to each other, with a clean, modern UI and clear flows. It uses API calls with Alamofire, dependency injection, and coordinators. We use data persistence to store basic user info and temporary data for faster responses. Built with UIKit and MVVM. ',
+        },
+        proj2: {
+            title: 'My Calculator',
+            description: 'A basic calculator app with real-time expression evaluation, a simple calculator mode, and another mode for unit conversion. It has a clean, minimal design and is built using UIKit and MVVM. ',
+        },
+        proj3: {
+            title: 'Coin Converter',
+            description: 'A currency converter app that uses a public API to fetch real-time exchange rates. It includes live conversion, currency selection, and is built with UIKit and MVVM. ',
+        },
+        proj4: {
+            title: 'Basic API',
+            description: "Backend built with Prisma and Express that exposes endpoints to manage users and tasks. It includes JWT authentication, logging, data validation, and error handling. I created this project to have my own “public” API. Designed to be scalable and easy to maintain. ",
+        },
+        proj5: {
+            title: 'Personal Website',
+            description: 'Personal website built with Astro and Tailwind CSS. It includes sections about me, my experience, featured projects, and a small technical notes/blog area. It’s optimized for performance, SEO, and accessibility, with support for dark mode, responsive design, and multiple languages. ',
+        },
+        proj6: {
+            title: 'Memorama App Android',
+            description: 'A memory game app for Android with different difficulty levels, a timer, and a scoring system. Built with Android Studio and Kotlin, using SQLite for data persistence and Google Drive for cloud backups. ',
+        },
     },
     experience: {
         title: 'Experience',

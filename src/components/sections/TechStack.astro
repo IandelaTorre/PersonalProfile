@@ -1,127 +1,132 @@
 ---
-import Badge from '../ui/Badge.astro';
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import Badge from "../ui/Badge.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const stack = [
   {
-    category: t('techStack.ios'),
+    category: t("techStack.ios"),
     items: [
-      { name: 'Swift',              color: 'blue' },
-      { name: 'SwiftUI',            color: 'blue' },
-      { name: 'UIKit',              color: 'indigo' },
-      { name: 'Storyboards',        color: 'indigo' },
-      { name: 'Auto Layout', color: 'indigo' },
-      { name: 'Stack Views', color: 'indigo' },
-      { name: 'Clean Architecture', color: 'gray' },
-      { name: 'MVVM',               color: 'gray' },
-      { name: 'Coordinators',       color: 'gray' },
-      { name: 'Dependency Injection', color: 'gray' },
-      { name: 'Async/Await',        color: 'blue' },
-      { name: 'Combine',            color: 'blue' },
-      { name: 'Local Persistence',  color: 'emerald' },
-      { name: 'Unit Tests (XCTest)', color: 'amber' },
-    ]
+      { name: "Swift", color: "orange" },
+      { name: "SwiftUI", color: "blue" },
+      { name: "UIKit", color: "indigo" },
+      { name: "Storyboards", color: "indigo" },
+      { name: "Auto Layout", color: "indigo" },
+      { name: "Stack Views", color: "indigo" },
+      { name: "Clean Architecture", color: "slate" },
+      { name: "MVVM", color: "slate" },
+      { name: "Coordinators", color: "slate" },
+      { name: "Dependency Injection", color: "slate" },
+      { name: "Async/Await", color: "blue" },
+      { name: "Combine", color: "blue" },
+      { name: "Local Persistence", color: "green" },
+      { name: "Unit Tests (XCTest)", color: "amber" },
+    ],
   },
   {
-    category: t('techStack.frontend'),
+    category: t("techStack.frontend"),
     items: [
-      { name: 'React',              color: 'teal' },
-      { name: 'TypeScript',         color: 'teal' },
-      { name: 'JavaScript',         color: 'yellow' },
-      { name: 'Astro',              color: 'purple' },
-      { name: 'Next.js',            color: 'gray' },
-      { name: 'React Router',       color: 'gray' },
-      { name: 'Redux',              color: 'rose' },
-      { name: 'Tailwind CSS',       color: 'teal' },
-      { name: 'Ant Design',         color: 'gray' },
-      { name: 'JWT Auth',           color: 'slate' },
-      { name: 'Responsive Design',  color: 'slate' }
-    ]
+      { name: "React", color: "cyan" },
+      { name: "TypeScript", color: "blue" },
+      { name: "JavaScript", color: "yellow" },
+      { name: "Astro", color: "orange" },
+      { name: "Next.js", color: "gray" },
+      { name: "React Router", color: "gray" },
+      { name: "Redux", color: "purple" },
+      { name: "Tailwind CSS", color: "cyan" },
+      { name: "Ant Design", color: "blue" },
+      { name: "JWT Auth", color: "zinc" },
+      { name: "Responsive Design", color: "zinc" },
+    ],
   },
   {
-    category: t('techStack.backend'),
+    category: t("techStack.backend"),
     items: [
-      { name: 'NestJS',             color: 'red' },
-      { name: 'Node.js',            color: 'emerald' },
-      { name: 'Fastify',            color: 'emerald' },
-      { name: 'Express',            color: 'gray' },
-      { name: 'TypeScript',         color: 'teal' },
-      { name: 'Prisma',             color: 'purple' },
-      { name: 'Drizzle ORM',        color: 'purple' },
-      { name: 'Serverless Framework', color: 'gray' },
-      { name: 'REST APIs',          color: 'slate' },
-      { name: 'JWT Auth',           color: 'slate' },
-      { name: 'Pino Logger',        color: 'amber' }
-    ]
+      { name: "NestJS", color: "red" },
+      { name: "Node.js", color: "green" },
+      { name: "Fastify", color: "gray" },
+      { name: "Express", color: "gray" },
+      { name: "TypeScript", color: "blue" },
+      { name: "Prisma", color: "purple" },
+      { name: "Drizzle ORM", color: "lime" },
+      { name: "Serverless Framework", color: "red" },
+      { name: "REST APIs", color: "zinc" },
+      { name: "JWT Auth", color: "zinc" },
+      { name: "Pino Logger", color: "amber" },
+    ],
   },
   {
-    category: t('techStack.databases'), 
+    category: t("techStack.databases"),
     items: [
-      { name: 'SQL',                color: 'gray' },
-      { name: 'PostgreSQL',         color: 'indigo' },
-      { name: 'Firebase',           color: 'amber' },
-      { name: 'Database Design',    color: 'gray' },
-    ]
+      { name: "SQL", color: "gray" },
+      { name: "PostgreSQL", color: "blue" },
+      { name: "Firebase", color: "amber" },
+      { name: "Database Design", color: "gray" },
+    ],
   },
   {
-    category: t('techStack.tooling'),
+    category: t("techStack.tooling"),
     items: [
-      { name: 'Xcode',              color: 'blue' },
-      { name: 'VS Code',            color: 'indigo' },
-      { name: 'Git',                color: 'gray' },
-      { name: 'Docker',             color: 'gray' },
-      { name: 'CI/CD',              color: 'emerald' },
-      { name: 'GitHub Actions',     color: 'emerald' },
-      { name: 'AWS (Basics)',       color: 'amber' },
-      { name: 'Postman',            color: 'slate' }
-    ]
-  }
+      { name: "Xcode", color: "blue" },
+      { name: "VS Code", color: "blue" },
+      { name: "Git", color: "orange" },
+      { name: "Docker", color: "blue" },
+      { name: "CI/CD", color: "green" },
+      { name: "GitHub Actions", color: "gray" },
+      { name: "AWS (Basics)", color: "amber" },
+      { name: "Postman", color: "orange" },
+    ],
+  },
 ];
 ---
 
-<section id="tech-stack" class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+<section
+  id="tech-stack"
+  class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto"
+>
   <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-    <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">{t('techStack.title')}</h2>
+    <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
+      {t("techStack.title")}
+    </h2>
   </div>
 
   <div class="flex flex-wrap justify-center gap-6" id="tech-stack-grid">
-    {stack.map((group) => (
-      <div class="spotlight-card relative group flex flex-col bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 shadow-sm rounded-xl p-4 md:p-5 overflow-hidden w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
-        <!-- Spotlight Border -->
-        <div class="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
-             style="background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(59, 130, 246, 0.4), transparent 40%);">
-        </div>
-        
-        <!-- Content -->
-        <div class="relative z-10">
+    {
+      stack.map((group) => (
+        <div class="spotlight-card relative group flex flex-col bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 shadow-sm rounded-xl p-4 md:p-5 overflow-hidden w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+          <div
+            class="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
+            style="background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(59, 130, 246, 0.4), transparent 40%);"
+          ></div>
+          <div class="relative z-10">
             <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-3">
-            {group.category}
+              {group.category}
             </h3>
             <div class="flex flex-wrap gap-2">
-            {group.items.map((item) => (
+              {group.items.map((item) => (
                 <Badge label={item.name} color={item.color as any} />
-            ))}
+              ))}
             </div>
+          </div>
         </div>
-      </div>
-    ))}
+      ))
+    }
   </div>
 </section>
 
 <script>
-  const cards = document.querySelectorAll('.spotlight-card');
-  
-  cards.forEach(card => {
-    card.addEventListener('mousemove', (e: any) => {
+  const cards = document.querySelectorAll(".spotlight-card");
+
+  cards.forEach((card) => {
+    card.addEventListener("mousemove", (e: any) => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      
-      (card as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
-      (card as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
+
+      (card as HTMLElement).style.setProperty("--mouse-x", `${x}px`);
+      (card as HTMLElement).style.setProperty("--mouse-y", `${y}px`);
     });
   });
 </script>
