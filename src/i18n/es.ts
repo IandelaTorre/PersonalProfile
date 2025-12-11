@@ -73,6 +73,12 @@ export const es = {
     },
     education: {
         title: 'Educación y Cursos',
+        ed1: {
+            title: "Ingeniería en Sistemas Computacionales",
+        },
+        more: {
+            title: "Más",
+        },
     },
     about: {
         title: 'Sobre Mí',

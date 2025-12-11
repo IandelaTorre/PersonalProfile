@@ -73,6 +73,13 @@ export const en = {
     },
     education: {
         title: 'Education & Courses',
+        ed1: {
+            title: "Computational Systems Engineering",
+
+        },
+        more: {
+            title: "More",
+        },
     },
     about: {
         title: 'About Me',
