@@ -107,3 +107,27 @@ const navLinks = [
     </div>
   </nav>
 </header>
+
+<script>
+  // Close mobile menu when a link is clicked
+  const navLinks = document.querySelectorAll(
+    "#navbar-collapse-with-animation a",
+  );
+  const collapseToggle = document.querySelector(
+    '[data-hs-collapse="#navbar-collapse-with-animation"]',
+  ) as HTMLElement | null;
+  const collapseMenu = document.getElementById(
+    "navbar-collapse-with-animation",
+  );
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (collapseMenu && !collapseMenu.classList.contains("hidden")) {
+        // If menu is open, click the toggle to close it via Preline logic
+        if (collapseToggle) {
+          collapseToggle.click();
+        }
+      }
+    });
+  });
+</script>

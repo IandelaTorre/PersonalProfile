@@ -14,10 +14,10 @@ const hobbies = [
 
 <section id="about" class="relative">
   <div
-    class="about-container h-screen flex flex-col items-center justify-center overflow-hidden dark:bg-neutral-900"
+    class="about-container min-h-screen sm:h-screen flex flex-col items-center justify-start pt-32 sm:justify-center sm:pt-0 overflow-hidden dark:bg-neutral-900"
   >
     <!-- Header: Avatar + Name -->
-    <div class="about-header flex flex-col items-center z-10 ">
+    <div class="about-header flex flex-col items-center z-10">
       <h2
         class="about-name text-3xl sm:text-5xl font-bold text-gray-800 dark:text-white"
       >
@@ -28,12 +28,11 @@ const hobbies = [
         alt="Avatar"
         class="about-avatar w-40 h-40 sm:w-64 sm:h-64 mt-6 rounded-full object-cover shadow-2xl border-4 border-white dark:border-neutral-800 bg-amber-50"
       />
-      
     </div>
 
     <!-- Content: Description + Hobbies -->
     <div
-      class="about-content absolute top-1/2 pt-32 opacity-0 text-center max-w-2xl px-4 translate-y-20"
+      class="about-content relative sm:absolute sm:top-1/2 mt-10 sm:mt-0 sm:pt-32 opacity-0 text-center max-w-2xl px-4 translate-y-20"
     >
       <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">
         {t("about.title")}
@@ -119,14 +118,14 @@ const hobbies = [
 
     tl.to(".about-avatar", {
       scale: 0.3,
-      y: -window.innerHeight * 0.3,
+      y: -window.innerHeight * 0.2,
       duration: 1,
     })
       .to(
         ".about-name",
         {
           scale: 1.1,
-          y: -window.innerHeight * 0.3,
+          y: -window.innerHeight * 0.2,
           duration: 1,
         },
         "<",
