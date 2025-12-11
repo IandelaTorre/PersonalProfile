@@ -83,7 +83,25 @@ export const es = {
     about: {
         title: 'Sobre Mí',
         name: 'Ian Axel',
-        description: "Soy un desarrollador que disfruta construyendo productos que se sienten pulidos e intuitivos. Fuera de la programación, me gusta explorar nuevas tecnologías, leer y trabajar en proyectos personales que desafían mi forma de pensar y resolver problemas.",
+        description: "Soy Ian, un desarrollador de iOS con experiencia en full-stack al que le gusta convertir ideas en aplicaciones fluidas y bien estructuradas utilizando Swift, SwiftUI y UIKit. Me preocupo mucho por la arquitectura limpia, el código legible y la colaboración con los equipos para crear productos que sean agradables de usar. Cuando no estoy programando, probablemente esté leyendo sobre software, jugando a videojuegos, viendo béisbol o fútbol. ",
+        hobbies: {
+            hobbie1: {
+                title: "Deportes",
+                icon: "🏃"
+            },
+            hobbie2: {
+                title: "Música",
+                icon: "🎵"
+            },
+            hobbie3: {
+                title: "Lectura",
+                icon: "📚"
+            },
+            hobbie4: {
+                title: "Videojuegos",
+                icon: "🎮"
+            },
+        },
         presentation: {
             p1: "¡Hola! Soy Ian Axel, desarrollador iOS y Full-Stack con experiencia construyendo aplicaciones móviles y soluciones web. Me considero un apasionado por la tecnología y como se puede aplicar para resolver problemas de la vida real. ",
             p2: "Hoy estoy enfocado en el desarrollo de aplicaciones móviles para iOS utilizando Swift, UIKit y SwiftUI, buscando siempre utilizar buenas prácticas, arquitecturas limpias y patrones de diseño que mejoren la calidad del código y la experiencia del usuario. ",
@@ -154,6 +172,9 @@ export const es = {
     },
     contact: {
         title: 'Contacto',
+        ctaCV: 'Descargar CV',
+        email: 'Copiar Correo',
+        copied: '¡Correo copiado!',
     },
     footer: {
         title: "Desarrollador iOS & Full-Stack",
