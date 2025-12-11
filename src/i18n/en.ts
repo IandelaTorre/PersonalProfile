@@ -23,7 +23,7 @@ export const en = {
     },
     projects: {
         title: 'Featured Projects',
-        viewAll: 'View Relevant Projects',
+        viewAll: 'Most Relevant Projects',
         proj1: {
             title: 'TaskFlow',
             description: 'A task management app where users can assign tasks to each other, with a clean, modern UI and clear flows. It uses API calls with Alamofire, dependency injection, and coordinators. We use data persistence to store basic user info and temporary data for faster responses. Built with UIKit and MVVM. ',
@@ -51,6 +51,25 @@ export const en = {
     },
     experience: {
         title: 'Experience',
+        exp1: {
+            title: "Ikania",
+            role: "Full-Stack Developer",
+            period: "2025 - Present",
+            description: "I worked as a backend developer on an audits and complaints platform, building services and modules for a web app with role-based user management and JWT authentication via AWS Cognito. I was responsible for creating and configuring Cognito User Pools and Clients, designing RESTful APIs with NestJS and Drizzle, and ensuring consistent responses through a shared mapper layer and Zod-based validations. I also containerized the project, writing scripts to automate building and running the app in Docker. ",
+            more: "On a second project, focused on investments and digital-bank–style accounts, I developed backend services using Serverless Framework, integrating Cognito for role-based auth and implementing Lambda functions to handle loan calculations and payment schedules using Python and NumPy within the same serverless stack. I also contributed to the frontend, building UI screens with TypeScript, Vite, Tailwind CSS, and shadcn/ui components. Across both projects, I worked closely with the team to keep a clean architecture, well-structured endpoints, and robust authentication flows. ",
+        },
+        exp2: {
+            title: "Wundertec",
+            role: "Full-Stack Developer",
+            description: "I worked as a full-stack developer on a large-scale vehicle workshop management system that tracked each car’s lifecycle (check-in, in workshop, in validation, delivery), handled catalog data, and logged vehicle entries and exits. I focused on improving the vehicle intake flow by adding an “express” entry mode, redesigning the vehicle list to be more readable, responsive, and visually polished, and implementing an Excel export feature for vehicle records. On the tech side, I worked mainly with React, JavaScript, Tailwind CSS, and Ant Design on the frontend, and Express on the backend. ",
+            more: "I also contributed as a full-stack developer to a medical assistance platform with user management, basic auth, and Google login. Depending on the user’s role (doctor or patient), the app allowed creating and viewing prescriptions generated from PDF templates, managing appointments through a calendar, and enabling chat and video calls for consultations, along with a medication catalog. I helped build the UI and flows using React and Tailwind, and implemented backend logic and data access using Prisma and Express. In both projects, I collaborated with the team to align the UI and API design with business requirements and keep the codebase maintainable and consistent. ",
+        },
+        exp3: {
+            title: "TelcoPS",
+            role: "Android Developer",
+            description: "I worked on an internal warehouse management Android app, structured around families, sub-families, and Configuration Items (CIs) to provide better inventory control. Each entity had its own CRUD, and any change went through an approval workflow before being applied. When creating a CI, the system generated a QR code that, when scanned, took the user directly to the corresponding item, both from the mobile app and the web version. ",
+            more: "My work focused on migrating several screens and services to an MVVM-based Clean Architecture, improving separation of concerns and making the codebase easier to maintain. I implemented more robust error handling to prevent crashes and improve the overall user experience, and refined the QR flow so that scanning always routed the user to the correct CI. I also made visual and layout improvements to better align the UI with Material Design guidelines. ",
+        },
     },
     education: {
         title: 'Education & Courses',

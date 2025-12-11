@@ -6,32 +6,27 @@ const t = useTranslations(lang);
 
 const experience = [
   {
-    role: "Senior iOS Developer",
-    company: "Tech Solutions Inc.",
-    period: "2022 - Present",
-    description:
-      lang === "en"
-        ? "Leading the iOS team in developing a flagship e-commerce application. Implemented modular architecture using SPM and improved build times by 40%."
-        : "Liderando el equipo de iOS en el desarrollo de una aplicación insignia de comercio electrónico. Implementé una arquitectura modular usando SPM y mejoré los tiempos de compilación en un 40%.",
-  },
-  {
-    role: "Full-Stack Developer",
-    company: "Creative Agency",
-    period: "2020 - 2022",
-    description:
-      lang === "en"
-        ? "Developed web and mobile solutions for various clients. Built RESTful APIs with NestJS and responsive frontends with React."
-        : "Desarrollé soluciones web y móviles para varios clientes. Construí APIs RESTful con NestJS y frontends responsivos con React.",
-  },
-  {
-    role: "Freelance Developer",
-    company: "Self-employed",
-    period: "2018 - 2020",
-    description:
-      lang === "en"
-        ? "Worked on multiple iOS projects for startups. Specialized in UI/UX implementation and CoreAnimation."
-        : "Trabajé en múltiples proyectos de iOS para startups. Especializado en implementación de UI/UX y CoreAnimation.",
+    role: t("experience.exp1.role"),
+    company: t("experience.exp1.title"),
+    period: t("experience.exp1.period"),
+    description: t("experience.exp1.description"),
+    more: t("experience.exp1.more"),
     badge: "Freelance",
+  },
+  {
+    role: t("experience.exp2.role"),
+    company: t("experience.exp2.title"),
+    period: "2024 - 2025",
+    description: t("experience.exp2.description"),
+    more: t("experience.exp2.more")
+  },
+  {
+    role: t("experience.exp3.role"),
+    company: t("experience.exp3.title"),
+    period: "2023 - 2024",
+    description: t("experience.exp3.description"),
+    more: t("experience.exp3.more"),
+    
   },
 ];
 ---
@@ -76,9 +71,14 @@ const experience = [
             <p class="mt-1 text-sm text-gray-400 dark:text-neutral-500">
               {item.period}
             </p>
-            <p class="mt-3 text-gray-600 dark:text-neutral-400">
+            <p class="mt-3 text-justify text-gray-600 dark:text-neutral-400">
               {item.description}
             </p>
+            {item.more && (
+              <p class="mt-3 text-justify text-gray-600 dark:text-neutral-400">
+                {item.more}
+              </p>
+            )}
           </div>
         </div>
       ))

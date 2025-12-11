@@ -23,7 +23,7 @@ export const es = {
     },
     projects: {
         title: 'Proyectos Destacados',
-        viewAll: 'Ver proyectos relevantes',
+        viewAll: 'Proyectos más relevantes',
         proj1: {
             title: 'TaskFlow',
             description: 'Una aplicación para asignación de tareas entre usuarios, utilizando un diseño limpio y moderno con flujos claros. Se utilizan llamadas a API con Alamofire, inyección de dependencias y coordinadores. Utilizamos persistencia de datos para almacenar datos básicos del usuario y datos temporales para una respuesta más rápida. Construida con UIKit y MVVM. '
@@ -51,6 +51,25 @@ export const es = {
     },
     experience: {
         title: 'Experiencia',
+        exp1: {
+            title: "Ikania",
+            role: "Desarrollador Full-Stack",
+            period: "2025 - Presente",
+            description: "Trabajé como desarrollador backend en una plataforma de auditorías y quejas, construyendo servicios y módulos para una aplicación web con gestión de usuarios por roles y autenticación JWT usando AWS Cognito. Me encargué de crear y configurar los User Pools y Clients, diseñar APIs RESTful con NestJS y Drizzle, y asegurar respuestas consistentes a través de un mapper común y validaciones con Zod. También realicé la dockerización del proyecto, incluyendo scripts para automatizar el build y la ejecución en contenedores. ",
+            more: "En un segundo proyecto, orientado a inversiones y gestión de cuentas tipo “banca digital”, desarrollé servicios backend con Serverless Framework, integrando Cognito para autenticación basada en roles y creando funciones Lambda responsables del cálculo de préstamos y cronogramas de pagos, usando Python y NumPy dentro del mismo entorno serverless. Además, colaboré en la parte de frontend, maquetando pantallas con TypeScript, Vite, Tailwind CSS y componentes de shadcn/ui. En ambos proyectos trabajé de cerca con el equipo para mantener una arquitectura limpia, endpoints bien documentados y flujos de autenticación robustos. ",
+        },
+        exp2: {
+            title: "Wundertec",
+            role: "Desarrollador Full-Stack",
+            description: "Participé como desarrollador full-stack en un sistema para la gestión de un taller masivo de vehículos, que controlaba la entrada, estado y salida de las unidades (entrada, en taller, en validación, entrega), junto con catálogos y una bitácora de movimientos. Me enfoqué en mejorar el flujo de registro de vehículos añadiendo una versión “express”, en rediseñar el listado para hacerlo más claro, responsive y agradable visualmente, y en implementar una sección para generar y descargar reportes en Excel con los registros del taller. En este proyecto trabajé principalmente con React, JavaScript, Tailwind CSS y Ant Design en el frontend, y con Express en el backend. ",
+            more: "También trabajé como full-stack en una plataforma tipo asistencia médica, con gestión de usuarios, autenticación básica y login con Google. Dentro del sistema, según el rol (médico o paciente), se podían crear y consultar recetas generadas a partir de plantillas en PDF, gestionar citas con calendario integrado y habilitar chat y videollamadas entre usuarios, además de un catálogo de medicamentos. Aquí participé tanto en la construcción de pantallas y flujos en React + Tailwind, como en la implementación de la capa de datos con Prisma y Express. En ambos proyectos colaboré con el equipo para alinear la UI con las necesidades del negocio y mantener un código mantenible y coherente. ",
+        },
+        exp3: {
+            title: "TelcoPS",
+            role: "Desarrollador Android",
+            description: "Trabajé en una aplicación móvil Android para la gestión interna de un almacén, organizada en familias, subfamilias y Configuration Items (CI) para tener un mejor control del inventario. Cada entidad contaba con su CRUD y los cambios pasaban por un flujo de aprobación antes de aplicarse. Al crear un CI se generaba un código QR que, al escanearlo, llevaba directamente al ítem correspondiente, tanto desde la app móvil como desde la versión web. ",
+            more: "Mi trabajo se centró en migrar diferentes pantallas y servicios a una arquitectura basada en MVVM con Clean Architecture, mejorando la separación de responsabilidades y la mantenibilidad del código. Implementé un manejo de errores más robusto para evitar cierres inesperados de la app y mejorar la experiencia del usuario, además de ajustar el flujo de redirección para que el escaneo del QR siempre llevara al CI correcto. También realicé mejoras visuales y correcciones de diseño para alinear la interfaz con las guías de Material Design. ",
+        },
     },
     education: {
         title: 'Educación y Cursos',
