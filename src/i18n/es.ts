@@ -6,9 +6,10 @@ export const es = {
         notes: 'Notas',
     },
     hero: {
-        title: 'Desarrollador iOS & Full-Stack',
-        subtitle: 'Creando aplicaciones móviles pulidas y soluciones web robustas.',
-        ctaProjects: 'Ver Proyectos iOS',
+        title: 'Desarrollador iOS',
+        subtitle: 'Con conocimientos y experiencia en desarrollo Full-Stack. ',
+        ready: 'Disponible para nuevos retos. ',
+        ctaProjects: 'Ver Proyectos',
         ctaWeb: 'Ver Proyectos Web',
         ctaCV: 'Descargar CV',
     },
@@ -18,21 +19,89 @@ export const es = {
         frontend: 'Frontend Web',
         backend: 'Backend',
         tooling: 'Herramientas',
+        databases: 'Datos y Bases de Datos',
     },
     projects: {
         title: 'Proyectos Destacados',
-        viewAll: 'Ver Todos',
+        viewAll: 'Proyectos más relevantes',
+        proj1: {
+            title: 'TaskFlow',
+            description: 'Una aplicación para asignación de tareas entre usuarios, utilizando un diseño limpio y moderno con flujos claros. Se utilizan llamadas a API con Alamofire, inyección de dependencias y coordinadores. Utilizamos persistencia de datos para almacenar datos básicos del usuario y datos temporales para una respuesta más rápida. Construida con UIKit y MVVM. '
+        },
+        proj2: {
+            title: 'My Calculator',
+            description: 'Una aplicación de calculadora de operaciones básicas con evaluación en tiempo real, un modo de calculadora básica y otro modo para convertir unidades. Se utiliza un diseño simple, limpio y moderno utilizando UIKit y MVVM. ',
+        },
+        proj3: {
+            title: 'Coin Converter',
+            description: 'Una aplicación de conversión de monedas que utiliza una API pública para obtener las tasas de cambio en tiempo real. Incluye conversión en tiempo real, selección de monedas y esta construida con UIKit y MVVM. ',
+        },
+        proj4: {
+            title: 'Basic API',
+            description: "Backend construido con Prisma y Express, que ofrece endpoints para gestionar usuarios y tareas. Incluye autenticación JWT, gestión con logs, validación de datos y manejo de errores. Proyecto creado con la finalidad de tener mi propia API 'pública'. Diseñado para ser escalable y fácil de mantener. ",
+        },
+        proj5: {
+            title: 'Personal Website',
+            description: 'Página web personal construida con Astro y Tailwind CSS. Presenta secciones sobre mí, mi experiencia, proyectos destacados y un blog de notas técnicas. Optimizada para rendimiento, SEO y accesibilidad, con soporte para modo oscuro, diseño responsivo e idiomas. ',
+        },
+        proj6: {
+            title: 'Memorama App Android',
+            description: 'Aplicación de memorama para Android con diferentes niveles de dificultad, temporizador y sistema de puntuación. Construida con Android Studio, kotlin y utiliza SQLite para la persistencia de datos. Respaldos en la nube con Google Drive. ',
+        },
     },
     experience: {
         title: 'Experiencia',
+        exp1: {
+            title: "Ikania",
+            role: "Desarrollador Full-Stack",
+            period: "2025 - Presente",
+            description: "Trabajé como desarrollador backend en una plataforma de auditorías y quejas, construyendo servicios y módulos para una aplicación web con gestión de usuarios por roles y autenticación JWT usando AWS Cognito. Me encargué de crear y configurar los User Pools y Clients, diseñar APIs RESTful con NestJS y Drizzle, y asegurar respuestas consistentes a través de un mapper común y validaciones con Zod. También realicé la dockerización del proyecto, incluyendo scripts para automatizar el build y la ejecución en contenedores. ",
+            more: "En un segundo proyecto, orientado a inversiones y gestión de cuentas tipo “banca digital”, desarrollé servicios backend con Serverless Framework, integrando Cognito para autenticación basada en roles y creando funciones Lambda responsables del cálculo de préstamos y cronogramas de pagos, usando Python y NumPy dentro del mismo entorno serverless. Además, colaboré en la parte de frontend, maquetando pantallas con TypeScript, Vite, Tailwind CSS y componentes de shadcn/ui. En ambos proyectos trabajé de cerca con el equipo para mantener una arquitectura limpia, endpoints bien documentados y flujos de autenticación robustos. ",
+        },
+        exp2: {
+            title: "Wundertec",
+            role: "Desarrollador Full-Stack",
+            description: "Participé como desarrollador full-stack en un sistema para la gestión de un taller masivo de vehículos, que controlaba la entrada, estado y salida de las unidades (entrada, en taller, en validación, entrega), junto con catálogos y una bitácora de movimientos. Me enfoqué en mejorar el flujo de registro de vehículos añadiendo una versión “express”, en rediseñar el listado para hacerlo más claro, responsive y agradable visualmente, y en implementar una sección para generar y descargar reportes en Excel con los registros del taller. En este proyecto trabajé principalmente con React, JavaScript, Tailwind CSS y Ant Design en el frontend, y con Express en el backend. ",
+            more: "También trabajé como full-stack en una plataforma tipo asistencia médica, con gestión de usuarios, autenticación básica y login con Google. Dentro del sistema, según el rol (médico o paciente), se podían crear y consultar recetas generadas a partir de plantillas en PDF, gestionar citas con calendario integrado y habilitar chat y videollamadas entre usuarios, además de un catálogo de medicamentos. Aquí participé tanto en la construcción de pantallas y flujos en React + Tailwind, como en la implementación de la capa de datos con Prisma y Express. En ambos proyectos colaboré con el equipo para alinear la UI con las necesidades del negocio y mantener un código mantenible y coherente. ",
+        },
+        exp3: {
+            title: "TelcoPS",
+            role: "Desarrollador Android",
+            description: "Trabajé en una aplicación móvil Android para la gestión interna de un almacén, organizada en familias, subfamilias y Configuration Items (CI) para tener un mejor control del inventario. Cada entidad contaba con su CRUD y los cambios pasaban por un flujo de aprobación antes de aplicarse. Al crear un CI se generaba un código QR que, al escanearlo, llevaba directamente al ítem correspondiente, tanto desde la app móvil como desde la versión web. ",
+            more: "Mi trabajo se centró en migrar diferentes pantallas y servicios a una arquitectura basada en MVVM con Clean Architecture, mejorando la separación de responsabilidades y la mantenibilidad del código. Implementé un manejo de errores más robusto para evitar cierres inesperados de la app y mejorar la experiencia del usuario, además de ajustar el flujo de redirección para que el escaneo del QR siempre llevara al CI correcto. También realicé mejoras visuales y correcciones de diseño para alinear la interfaz con las guías de Material Design. ",
+        },
     },
     education: {
         title: 'Educación y Cursos',
+        ed1: {
+            title: "Ingeniería en Sistemas Computacionales",
+        },
+        more: {
+            title: "Más",
+        },
     },
     about: {
         title: 'Sobre Mí',
         name: 'Ian Axel',
-        description: "Soy un desarrollador que disfruta construyendo productos que se sienten pulidos e intuitivos. Fuera de la programación, me gusta explorar nuevas tecnologías, leer y trabajar en proyectos personales que desafían mi forma de pensar y resolver problemas.",
+        description: "Soy Ian, un desarrollador de iOS con experiencia en full-stack al que le gusta convertir ideas en aplicaciones fluidas y bien estructuradas utilizando Swift, SwiftUI y UIKit. Me preocupo mucho por la arquitectura limpia, el código legible y la colaboración con los equipos para crear productos que sean agradables de usar. Cuando no estoy programando, probablemente esté leyendo sobre software, jugando a videojuegos, viendo béisbol o fútbol. ",
+        hobbies: {
+            hobbie1: {
+                title: "Deportes",
+                icon: "🏃"
+            },
+            hobbie2: {
+                title: "Música",
+                icon: "🎵"
+            },
+            hobbie3: {
+                title: "Lectura",
+                icon: "📚"
+            },
+            hobbie4: {
+                title: "Videojuegos",
+                icon: "🎮"
+            },
+        },
         presentation: {
             p1: "¡Hola! Soy Ian Axel, desarrollador iOS y Full-Stack con experiencia construyendo aplicaciones móviles y soluciones web. Me considero un apasionado por la tecnología y como se puede aplicar para resolver problemas de la vida real. ",
             p2: "Hoy estoy enfocado en el desarrollo de aplicaciones móviles para iOS utilizando Swift, UIKit y SwiftUI, buscando siempre utilizar buenas prácticas, arquitecturas limpias y patrones de diseño que mejoren la calidad del código y la experiencia del usuario. ",
@@ -103,6 +172,9 @@ export const es = {
     },
     contact: {
         title: 'Contacto',
+        ctaCV: 'Descargar CV',
+        email: 'Copiar Correo',
+        copied: '¡Correo copiado!',
     },
     footer: {
         title: "Desarrollador iOS & Full-Stack",

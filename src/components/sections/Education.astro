@@ -6,23 +6,53 @@ const t = useTranslations(lang);
 
 const education = [
   {
-    degree: 'B.S. Computer Science',
-    school: 'University of Technology',
-    year: '2016 - 2020',
-    type: 'Formal'
+    degree: t('education.ed1.title'),
+    school: 'Escuela Superior de Cómputo (ESCOM)',
+    year: '2019 - 2024',
+    type: 'Formal',
+    file: false,
+    url: "https://www.escom.ipn.mx/htmls/conocenos/ubicacion.php",
   },
   {
-    degree: 'Advanced iOS Development',
-    school: 'Udacity Nanodegree',
-    year: '2021',
-    type: 'Course'
+    degree: 'iOS y Swift 5.7  Curso Completo Desde Cero a Profesional',
+    school: 'Juan Villalvazo, Brais Moure',
+    year: '2024',
+    type: 'Course',
+    file: true,
+    url: "/docs/courses/CertificadoSwift.pdf",
   },
   {
-    degree: 'Full Stack Open',
-    school: 'University of Helsinki',
-    year: '2022',
-    type: 'Course'
-  }
+    degree: 'Advanced Programming in Swift',
+    school: 'Meta',
+    year: '2025',
+    type: 'Course',
+    file: false,
+    url: "https://www.coursera.org/learn/advanced-programming-in-swift/home/module/1",
+  },
+  {
+    degree: 'Aprende a crear apps para iOS 14, iOS 15, iOS 16 y ahora con iOS 17 con SwiftUI, Swift 5.7 y aplicando MVVM',
+    school: 'Jorge Maldonado',
+    year: '2025',
+    type: 'Course',
+    file: true,
+    url: "/docs/courses/CertificadoJorgeMaldonado.pdf",
+  },
+  {
+    degree: 'iOS Development Masterclass 2026 – SwiftUI, SwiftData, AI',
+    school: 'Robert Petras',
+    year: '2025',
+    type: 'Course',
+    file: false,
+    url: "https://www.udemy.com/course/swiftui-masterclass-course-ios-development-with-swift/?couponCode=ACCAGE0923",
+  },
+  {
+    degree: 'Introducción a SwiftUI',
+    school: 'Angel Gómez',
+    year: '2025',
+    type: 'Course',
+    file: false,
+    url: "https://www.udemy.com/course/specktro-introduccion-a-swiftui/?couponCode=ACCAGE0923",
+  },
 ];
 ---
 
@@ -41,17 +71,22 @@ const education = [
 
         <!-- Content -->
         <div class="relative z-10 flex flex-col h-full">
-            <div class="mb-auto">
-                <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-white/10 dark:text-white mb-3">
-                    {item.type}
-                </span>
-                <h3 class="text-lg font-bold text-gray-800 dark:text-white">
-                    {item.degree}
-                </h3>
-                <p class="mt-1 text-gray-500 dark:text-neutral-400">
-                    {item.school}
-                </p>
-            </div>
+                <div class="flex-1 flex flex-col">
+                    <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-white/10 dark:text-white mb-3 self-start">
+                        {item.type}
+                    </span>
+                    <h3 class="text-lg font-bold text-gray-800 dark:text-white">
+                        {item.degree}
+                    </h3>
+                    <p class="mt-1 text-gray-500 dark:text-neutral-400">
+                        {item.school}
+                    </p>
+                    <p class="mt-auto text-blue-600 dark:text-blue-400 hover:underline pt-4">
+                      <a href={item.url} target="_blank" rel="noopener noreferrer">
+                          {t("education.more.title")}
+                      </a>
+                    </p>
+                </div>
             <div class="mt-4 pt-4 border-t border-gray-100 dark:border-neutral-800">
                 <p class="text-sm text-gray-500 dark:text-neutral-500">
                     {item.year}
