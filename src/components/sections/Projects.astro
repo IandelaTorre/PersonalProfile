@@ -137,56 +137,6 @@ const projects = [
     type: "iOS",
     url: "https://github.com/IandelaTorre/CoinConverter",
   },
-  {
-    title: "Basic API",
-    description: t("projects.proj4.description"),
-    tags: [
-      "JavaScript",
-      "Prisma",
-      "PostgreSQL",
-      "Express",
-      "REST API",
-      "JWT Auth",
-      "Supabase",
-      "Render",
-    ],
-    image: "/images/projects/basic-api-banner.webp",
-    type: "Backend",
-    url: "https://github.com/IandelaTorre/BasicAPI",
-  },
-  {
-    title: "Personal Website",
-    description: t("projects.proj5.description"),
-    tags: [
-      "Astro",
-      "Tailwind CSS",
-      "TypeScript",
-      "i18n",
-      "GSAP",
-      "Markdown",
-      "Preline",
-      "Vercel",
-    ],
-    image: "/images/projects/personal-website-banner.webp",
-    type: "Frontend",
-    url: "https://github.com/IandelaTorre/PersonalProfile",
-  },
-  {
-    title: "Memorama App Android",
-    description: t("projects.proj6.description"),
-    tags: [
-      "Android",
-      "Kotlin",
-      "MVVM",
-      "SQLite",
-      "Google Drive API",
-      "Clean Architecture",
-    ],
-    image:
-      "/images/projects/memorama-android-banner.webp",
-    type: "Android",
-    url: "https://github.com/IandelaTorre/ETSMemorama",
-  },
 ];
 ---
 
@@ -220,7 +170,7 @@ const projects = [
           </div>
           <div class="flex flex-col h-full">
             <div class="flex justify-between items-center mb-2">
-              <Badge label={project.type} color='gray' />
+              <Badge label={project.type} color="gray" />
             </div>
             <h3 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-500">
               {project.title}
@@ -238,6 +188,16 @@ const projects = [
       ))
     }
   </div>
+      <p class="mt-6 text-sm text-center text-gray-600 dark:text-neutral-400">{t("projects.more")}
+          <a
+            href={lang === 'en' ? '/projects' : '/es/projects'}
+            class="relative font-medium text-blue-400 hover:text-blue-300
+                  bg-gradient-to-r from-blue-400 to-sky-400
+                  bg-[length:0%_2px] bg-left-bottom bg-no-repeat
+                  transition-all duration-300 ease-out
+                  hover:bg-[length:100%_2px]"
+          >
+            {t("projects.ctaProjects")}</a>.</p>
 </section>
 
 <script>
