@@ -48,6 +48,10 @@ export const en = {
             title: 'Memorama App Android',
             description: 'A memory game app for Android with different difficulty levels, a timer, and a scoring system. Built with Android Studio and Kotlin, using SQLite for data persistence and Google Drive for cloud backups. ',
         },
+        moreProjects: "Ready to see more code?",
+        more: "Want to see more? Check out the",
+        ctaProjects: "projects section",
+        ctaGithub: "Visit my GitHub Profile",
     },
     experience: {
         title: 'Experience',
@@ -75,7 +79,22 @@ export const en = {
         title: 'Education & Courses',
         ed1: {
             title: "Computational Systems Engineering",
-
+            type: "Formal",
+        },
+        ed2: {
+            type: "Course",
+        },
+        ed3: {
+            type: "Course",
+        },
+        ed4: {
+            type: "Course",
+        },
+        ed5: {
+            type: "Course",
+        },
+        ed6: {
+            type: "Course",
         },
         more: {
             title: "More",

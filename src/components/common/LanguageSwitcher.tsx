@@ -12,41 +12,61 @@ export default function LanguageSwitcher({ initialLang }: { initialLang: Lang })
     setMounted(true);
   }, [initialLang]);
 
-  const toggleLang = () => {
-    const newLang = $lang === 'en' ? 'es' : 'en';
-    
+  const switchLang = (targetLang: Lang) => {
+    if (targetLang === $lang) return;
+
     let newPath;
     const currentPath = window.location.pathname;
     
+    // Logic to switch path
     if (initialLang === defaultLang) {
-        // Currently at default (e.g. /about), switch to /es/about
-        // If root /, switch to /es/
-        newPath = `/${newLang}${currentPath === '/' ? '' : currentPath}`;
+        // We are at default language (e.g. /about or /)
+        // If target is 'es', prepend /es
+        // If target is 'en', do nothing (already there) - but we entered iff different
+        if (targetLang === 'es') {
+             newPath = `/es${currentPath === '/' ? '' : currentPath}`;
+        } else {
+            newPath = currentPath; 
+        }
     } else {
-        // Currently at /es/..., switch to /...
-        // Remove /es
-        newPath = currentPath.replace(`/${initialLang}`, '') || '/';
+        // We are at 'es' (e.g. /es/about)
+        // If target is 'en', remove /es
+        if (targetLang === 'en') {
+             newPath = currentPath.replace(`/${initialLang}`, '') || '/';
+        } else {
+            newPath = currentPath;
+        }
     }
 
-    window.location.href = newPath;
+    if (newPath !== currentPath) {
+        window.location.href = newPath;
+    }
   };
 
-  if (!mounted) return null; // Avoid hydration mismatch
+  if (!mounted) return null;
 
   return (
-    <button
-      onClick={toggleLang}
-      className="relative inline-flex items-center cursor-pointer group focus:outline-none"
-      aria-label="Toggle Language"
-    >
-      <div className="w-14 h-7 bg-gray-200 rounded-full shadow-inner transition-colors duration-300 ease-in-out group-hover:bg-gray-300 dark:bg-neutral-700 dark:group-hover:bg-neutral-600"></div>
-      <div 
-        className={`absolute top-1 left-1 w-5 h-5 bg-white rounded-full shadow-sm transition-transform duration-300 ease-in-out flex items-center justify-center text-[10px] font-bold text-gray-700 ${
-          $lang === 'es' ? 'translate-x-7' : 'translate-x-0'
+    <div className="inline-flex items-center rounded-full bg-gray-100 p-1 dark:bg-white/5 border border-gray-200 dark:border-white/10">
+      <button
+        onClick={() => switchLang('es')}
+        className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${
+          $lang === 'es'
+            ? 'bg-blue-500 text-white shadow-sm'
+            : 'text-gray-500 hover:text-gray-900 dark:text-neutral-400 dark:hover:text-white'
         }`}
       >
-        {$lang === 'en' ? 'EN' : 'ES'}
-      </div>
-    </button>
+        ES
+      </button>
+      <button
+        onClick={() => switchLang('en')}
+        className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${
+          $lang === 'en'
+            ? 'bg-blue-500 text-white shadow-sm'
+            : 'text-gray-500 hover:text-gray-900 dark:text-neutral-400 dark:hover:text-white'
+        }`}
+      >
+        EN
+      </button>
+    </div>
   );
 }

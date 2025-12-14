@@ -48,6 +48,10 @@ export const es = {
             title: 'Memorama App Android',
             description: 'Aplicación de memorama para Android con diferentes niveles de dificultad, temporizador y sistema de puntuación. Construida con Android Studio, kotlin y utiliza SQLite para la persistencia de datos. Respaldos en la nube con Google Drive. ',
         },
+        moreProjects: "¿Listo para ver más código?",
+        more: "¿Quieres ver más? Revisa la",
+        ctaProjects: "sección de proyectos",
+        ctaGithub: "Visita mi perfil de GitHub",
     },
     experience: {
         title: 'Experiencia',
@@ -75,6 +79,22 @@ export const es = {
         title: 'Educación y Cursos',
         ed1: {
             title: "Ingeniería en Sistemas Computacionales",
+            type: "Formal",
+        },
+        ed2: {
+            type: "Curso",
+        },
+        ed3: {
+            type: "Curso",
+        },
+        ed4: {
+            type: "Curso",
+        },
+        ed5: {
+            type: "Curso",
+        },
+        ed6: {
+            type: "Curso",
         },
         more: {
             title: "Más",
