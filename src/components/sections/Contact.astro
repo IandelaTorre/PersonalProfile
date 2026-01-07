@@ -78,7 +78,7 @@ const t = useTranslations(lang);
       >
       {t("contact.email")}
     </Button>
-    <Button href="/docs/resume.pdf" download target="_blank" variant="ghost">
+    <Button href="/docs/resume-iOS-Ian.pdf" download target="_blank" variant="ghost">
       <svg
         class="flex-shrink-0 size-4"
         xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +129,7 @@ const t = useTranslations(lang);
 
     if (emailBtn && toast && toastMessage) {
       emailBtn.addEventListener("click", () => {
-        const email = "ianaxelperezdelatorre@gmail.com";
+        const email = "ianaxelperez7@gmail.com";
         const copiedMsg = emailBtn.getAttribute("data-copied-msg");
 
         if (copiedMsg) toastMessage.innerText = copiedMsg;
