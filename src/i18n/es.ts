@@ -65,7 +65,7 @@ export const es = {
         exp2: {
             title: "Wundertec",
             role: "Desarrollador Móvil / Full-Stack",
-            description: "Trabajé en una aplicación móvil con React Native para renta de vehículos, similar a plataformas como Hertz, utilizando React Native y TypeScript para construir flujos orientados al usuario y experiencias móviles alrededor del proceso de renta. Esto me permitió fortalecer mi experiencia en desarrollo de interfaces móviles, componentes reutilizables y una visión más enfocada en producto, colaborando al mismo tiempo en requerimientos funcionales y detalles de implementación.",
+            description: "Trabajé en una aplicación móvil con React Native para renta de vehículos, utilizando React Native y TypeScript para construir flujos orientados al usuario y experiencias móviles alrededor del proceso de renta. Esto me permitió fortalecer mi experiencia en desarrollo de interfaces móviles, componentes reutilizables y una visión más enfocada en producto, colaborando al mismo tiempo en requerimientos funcionales y detalles de implementación.",
             more: "En paralelo, contribuí como desarrollador full-stack en un sistema de gestión para un taller masivo de vehículos y en una plataforma de asistencia médica. En ambos proyectos mejoré flujos de usuario, responsividad y manejo de datos en el frontend con React, Tailwind y Ant Design, además de trabajar en la lógica backend y acceso a datos con Express y Prisma para mantener los sistemas alineados con las necesidades del negocio y fáciles de mantener.",
         },
         exp3: {

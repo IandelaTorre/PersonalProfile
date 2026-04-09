@@ -65,7 +65,7 @@ export const en = {
         exp2: {
             title: "Wundertec",
             role: "Mobile Developer / Full-Stack Developer",
-            description: "I worked on a React Native mobile app for vehicle rentals, similar to platforms like Hertz, using React Native and TypeScript to build user-facing flows and mobile experiences around the rental process. This helped me strengthen my experience in mobile UI development, reusable components, and app-oriented thinking while collaborating on product requirements and implementation details.",
+            description: "I worked on a React Native mobile app for vehicle rentals, using React Native and TypeScript to build user-facing flows and mobile experiences around the rental process. This helped me strengthen my experience in mobile UI development, reusable components, and app-oriented thinking while collaborating on product requirements and implementation details.",
             more: "In parallel, I contributed as a full-stack developer to a large-scale vehicle workshop management system and a medical assistance platform. Across both projects, I improved user flows, responsiveness, and data handling in the frontend with React, Tailwind, and Ant Design, while also working on backend logic and data access with Express and Prisma to keep the systems maintainable and aligned with business needs.",
         },
         exp3: {
