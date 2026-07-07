@@ -1,7 +1,10 @@
 ---
+import { getImage } from 'astro:assets';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import Navbar from '../components/common/Navbar.astro';
 import Footer from '../components/common/Footer.astro';
-import { getLang } from '../i18n/utils';
+import { getLang, useTranslations } from '../i18n/utils';
+import avatar from '../assets/images/avatar.png';
 import '../styles/global.css';
 
 interface Props {
@@ -10,18 +13,70 @@ interface Props {
 }
 
 const lang = getLang(Astro.currentLocale);
-const { title, description = "Ian Axel - iOS & Full-Stack Developer" } = Astro.props;
+const t = useTranslations(lang);
+const { title, description = t('meta.description') } = Astro.props;
+
+// URLs for canonical + hreflang alternates
+const normalize = (path: string) =>
+  path.length > 1 && path.endsWith('/') ? path.slice(0, -1) : path;
+const normalized = normalize(Astro.url.pathname);
+const basePath = lang === 'es' ? normalized.replace(/^\/es/, '') || '/' : normalized;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const enUrl = new URL(getRelativeLocaleUrl('en', basePath), Astro.site);
+const esUrl = new URL(getRelativeLocaleUrl('es', basePath), Astro.site);
+
+const ogImage = await getImage({ src: avatar, width: 800, height: 800, format: 'png' });
+const ogImageUrl = new URL(ogImage.src, Astro.site);
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Ian Axel Perez de la Torre',
+  url: Astro.site?.href,
+  image: ogImageUrl.href,
+  jobTitle: 'iOS Developer',
+  sameAs: [
+    'https://github.com/IandelaTorre',
+    'https://www.linkedin.com/in/ian-axel-perez-de-la-torre-35688b20b/',
+  ],
+};
 ---
 
 <!doctype html>
 <html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+
+    <!-- Canonical + language alternates -->
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="es" href={esUrl} />
+    <link rel="alternate" hreflang="x-default" href={enUrl} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:locale" content={lang === 'es' ? 'es_MX' : 'en_US'} />
+    <meta property="og:locale:alternate" content={lang === 'es' ? 'en_US' : 'es_MX'} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
     <noscript>
       <style>
         .reveal {
@@ -32,8 +87,14 @@ const { title, description = "Ian Axel - iOS & Full-Stack Developer" } = Astro.p
     </noscript>
   </head>
   <body class="bg-white dark:bg-neutral-900 text-gray-800 dark:text-gray-200 min-h-screen flex flex-col font-sans antialiased selection:bg-blue-100 selection:text-blue-700 dark:selection:bg-blue-500/30 dark:selection:text-blue-200">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-blue-600 focus:text-white"
+    >
+      {t('a11y.skipToContent')}
+    </a>
     <Navbar />
-    <main class="flex-grow pt-16">
+    <main id="main" class="flex-grow pt-16">
       <slot />
     </main>
     <Footer />

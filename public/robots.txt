@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://personal-profile-eta-ten.vercel.app/sitemap-index.xml

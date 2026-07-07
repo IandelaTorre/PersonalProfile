@@ -50,11 +50,11 @@ const experience = (await getCollection("experience")).sort(
             <p class="mt-1 text-sm text-gray-400 dark:text-neutral-500">
               {item.data.period[lang]}
             </p>
-            <p class="mt-3 text-justify text-gray-600 dark:text-neutral-400">
+            <p class="mt-3 text-gray-600 dark:text-neutral-400">
               {item.data.description[lang]}
             </p>
             {item.data.more && (
-              <p class="mt-3 text-justify text-gray-600 dark:text-neutral-400">
+              <p class="mt-3 text-gray-600 dark:text-neutral-400">
                 {item.data.more[lang]}
               </p>
             )}

@@ -4,6 +4,13 @@ export const es: Translation = {
     meta: {
         title: 'Ian Axel - Desarrollador iOS & Full-Stack',
         description: 'Página web personal de Ian Axel Perez de la Torre, desarrollador iOS con experiencia full-stack.',
+        aboutDescription: 'Quién soy, mi camino hacia el desarrollo iOS, cómo trabajo y lo que busco en mi siguiente rol.',
+        projectsDescription: 'Proyectos iOS, backend y web de Ian Axel: apps con UIKit y SwiftUI, APIs REST y más.',
+        notesDescription: 'Notas técnicas y recursos sobre desarrollo iOS, arquitectura de software y patrones de diseño.',
+    },
+    a11y: {
+        skipToContent: 'Saltar al contenido',
+        scrollDown: 'Bajar al Stack Tecnológico',
     },
     nav: {
         home: 'Inicio',

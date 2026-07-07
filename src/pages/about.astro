@@ -9,37 +9,40 @@ const lang = getLang(Astro.currentLocale);
 const t = useTranslations(lang);
 ---
 
-<BaseLayout title={`Ian Axel - ${t('nav.about')}`}>
+<BaseLayout
+  title={`Ian Axel - ${t('nav.about')}`}
+  description={t('meta.aboutDescription')}
+>
   <div class="max-w-3xl px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto">
     <div class="max-w-2xl">
       <div class="space-y-5 md:space-y-8">
         <div class="space-y-3">
-          <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.title')}</h2>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.presentation.p1')}</p>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.presentation.p2')}</p>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.presentation.p3')}</p>
+          <h1 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.title')}</h1>
+          <p class="text-lg text-gray-800 dark:text-neutral-200">{t('about.presentation.p1')}</p>
+          <p class="text-lg text-gray-800 dark:text-neutral-200">{t('about.presentation.p2')}</p>
+          <p class="text-lg text-gray-800 dark:text-neutral-200">{t('about.presentation.p3')}</p>
         </div>
 
         <div class="space-y-3">
           <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.myPath.title')}</h2>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.myPath.p1')}</p>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.myPath.p2')}</p>
+          <p class="text-lg text-gray-800 dark:text-neutral-200">{t('about.myPath.p1')}</p>
+          <p class="text-lg text-gray-800 dark:text-neutral-200">{t('about.myPath.p2')}</p>
         </div>
 
         <div class="space-y-3">
           <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.howIWork.title')}</h2>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.howIWork.p1')}</p>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.howIWork.p2')}</p>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.howIWork.p3')}</p>
+          <p class="text-lg text-gray-800 dark:text-neutral-200">{t('about.howIWork.p1')}</p>
+          <p class="text-lg text-gray-800 dark:text-neutral-200">{t('about.howIWork.p2')}</p>
+          <p class="text-lg text-gray-800 dark:text-neutral-200">{t('about.howIWork.p3')}</p>
         </div>
 
         <div class="space-y-10">
           <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.beyondCode.title')}</h2>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.beyondCode.p1')}</p>
+          <p class="text-lg text-gray-800 dark:text-neutral-200">{t('about.beyondCode.p1')}</p>
 
           <div class="grid md:grid-cols-2 gap-6 items-center">
             <div class="space-y-4">
-              <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.beyondCode.p2')}</p>
+              <p class="text-lg text-gray-800 dark:text-neutral-200">{t('about.beyondCode.p2')}</p>
             </div>
             <figure>
               <video
@@ -66,13 +69,13 @@ const t = useTranslations(lang);
               </figcaption>
             </figure>
             <div class="space-y-4">
-              <p class="text-lg text-justify text-gray-800 dark:text-neutral-200"> {t('about.beyondCode.p3')}</p>
+              <p class="text-lg text-gray-800 dark:text-neutral-200"> {t('about.beyondCode.p3')}</p>
             </div>
           </div>
           
           <div class="grid md:grid-cols-2 gap-6 items-center">
             <div class="space-y-4">
-              <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.beyondCode.p4')}</p>
+              <p class="text-lg text-gray-800 dark:text-neutral-200">{t('about.beyondCode.p4')}</p>
             </div>
             <figure>
               <Image class="w-full object-cover rounded-xl" src={malinche} alt="La Malinche" />
@@ -85,13 +88,13 @@ const t = useTranslations(lang);
 
         <div class="space-y-3">
           <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.lookingFor.title')}</h2>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.lookingFor.p1')}</p>
+          <p class="text-lg text-gray-800 dark:text-neutral-200">{t('about.lookingFor.p1')}</p>
           <ul class="list-disc list-inside space-y-2 text-lg text-gray-800 dark:text-neutral-200">
-            <li class="text-justify">{t('about.lookingFor.l1')}</li>
-            <li class="text-justify">{t('about.lookingFor.l2')}</li>
-            <li class="text-justify">{t('about.lookingFor.l3')}</li>
+            <li>{t('about.lookingFor.l1')}</li>
+            <li>{t('about.lookingFor.l2')}</li>
+            <li>{t('about.lookingFor.l3')}</li>
           </ul>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.lookingFor.p2')}</p>
+          <p class="text-lg text-gray-800 dark:text-neutral-200">{t('about.lookingFor.p2')}</p>
         </div>
       </div>
     </div>

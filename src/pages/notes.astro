@@ -12,10 +12,13 @@ const notes = (await getCollection('notes')).sort(
 );
 ---
 
-<BaseLayout title={`Ian Axel - ${t('nav.notes')}`}>
+<BaseLayout
+  title={`Ian Axel - ${t('nav.notes')}`}
+  description={t('meta.notesDescription')}
+>
   <section class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
     <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-      <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">{t('nav.notes')}</h2>
+      <h1 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">{t('nav.notes')}</h1>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -28,7 +31,7 @@ const notes = (await getCollection('notes')).sort(
             <p class="mt-1 text-xs text-gray-500 dark:text-neutral-500">
               {note.data.date[lang]}
             </p>
-            <p class="mt-3 text-justify text-gray-600 dark:text-neutral-400 flex-grow">
+            <p class="mt-3 text-gray-600 dark:text-neutral-400 flex-grow">
               {note.data.excerpt[lang]}
             </p>
             <div class="mt-4">
