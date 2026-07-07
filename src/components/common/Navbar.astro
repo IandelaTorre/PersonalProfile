@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-import LanguageSwitcher from "./LanguageSwitcher";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
 import avatar from "../../assets/images/avatar.png";
 
 const lang = getLangFromUrl(Astro.url);
@@ -96,23 +96,24 @@ const navLinks = [
             ))
           }
           <div class="pl-2 border-l border-gray-200 dark:border-white/10 ml-2">
-            <LanguageSwitcher client:load initialLang={lang} />
+            <LanguageSwitcher />
           </div>
         </div>
       </div>
 
       <div class="md:hidden flex items-center gap-4">
-        <LanguageSwitcher client:load initialLang={lang} />
+        <LanguageSwitcher />
         <!-- Mobile menu button -->
         <button
           type="button"
-          class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-2 rounded-full border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:border-neutral-700 dark:text-neutral-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
-          data-hs-collapse="#navbar-collapse-with-animation"
-          aria-controls="navbar-collapse-with-animation"
+          id="mobile-menu-toggle"
+          class="p-2 inline-flex justify-center items-center gap-2 rounded-full border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:border-neutral-700 dark:text-neutral-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <svg
-            class="hs-collapse-open:hidden w-4 h-4"
+            class="menu-icon-open w-4 h-4"
             width="16"
             height="16"
             fill="currentColor"
@@ -124,7 +125,7 @@ const navLinks = [
             ></path>
           </svg>
           <svg
-            class="hs-collapse-open:block hidden w-4 h-4"
+            class="menu-icon-close hidden w-4 h-4"
             width="16"
             height="16"
             fill="currentColor"
@@ -139,51 +140,73 @@ const navLinks = [
     </div>
 
     <!-- Mobile Menu -->
-    <div
-      id="navbar-collapse-with-animation"
-      class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:hidden"
-    >
-      <div class="flex flex-col gap-y-2 mt-5 pb-5">
-        {
-          navLinks.map((link) => (
-            <a
-              class:list={[
-                "px-3 py-2 rounded-lg text-sm font-medium transition-colors",
-                link.isActive
-                  ? "bg-blue-500 text-white"
-                  : "text-gray-600 hover:text-blue-600 hover:bg-gray-100 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-white",
-              ]}
-              href={link.href}
-            >
-              {link.label}
-            </a>
-          ))
-        }
+    <div id="mobile-menu" class="mobile-menu md:hidden">
+      <div class="overflow-hidden min-h-0">
+        <div class="flex flex-col gap-y-2 mt-5 pb-5">
+          {
+            navLinks.map((link) => (
+              <a
+                class:list={[
+                  "px-3 py-2 rounded-lg text-sm font-medium transition-colors",
+                  link.isActive
+                    ? "bg-blue-500 text-white"
+                    : "text-gray-600 hover:text-blue-600 hover:bg-gray-100 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-white",
+                ]}
+                href={link.href}
+              >
+                {link.label}
+              </a>
+            ))
+          }
+        </div>
       </div>
     </div>
   </nav>
 </header>
 
-<script>
-  // Close mobile menu when a link is clicked
-  const navLinks = document.querySelectorAll(
-    "#navbar-collapse-with-animation a",
-  );
-  const collapseToggle = document.querySelector(
-    '[data-hs-collapse="#navbar-collapse-with-animation"]',
-  ) as HTMLElement | null;
-  const collapseMenu = document.getElementById(
-    "navbar-collapse-with-animation",
-  );
+<style>
+  .mobile-menu {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 300ms ease;
+  }
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      if (collapseMenu && !collapseMenu.classList.contains("hidden")) {
-        // If menu is open, click the toggle to close it via Preline logic
-        if (collapseToggle) {
-          collapseToggle.click();
-        }
-      }
+  .mobile-menu.open {
+    grid-template-rows: 1fr;
+  }
+
+  #mobile-menu-toggle[aria-expanded="true"] .menu-icon-open {
+    display: none;
+  }
+
+  #mobile-menu-toggle[aria-expanded="true"] .menu-icon-close {
+    display: block;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-menu {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById("mobile-menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+
+  if (toggle && menu) {
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute("aria-expanded", String(open));
+      menu.classList.toggle("open", open);
+    };
+
+    toggle.addEventListener("click", () => {
+      setOpen(toggle.getAttribute("aria-expanded") !== "true");
     });
-  });
+
+    // Close the menu when a link is clicked
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => setOpen(false));
+    });
+  }
 </script>

@@ -44,7 +44,7 @@ const experience = [
   <div class="max-w-3xl mx-auto">
     {
       experience.map((item, index) => (
-        <div class="experience-item flex gap-x-3 opacity-0 translate-y-8">
+        <div class="reveal flex gap-x-3" style={`--reveal-delay: ${index * 150}ms`}>
           <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
             <div class="relative z-10 w-7 h-7 flex justify-center items-center">
               <div class="w-2 h-2 rounded-full bg-gray-400 dark:bg-neutral-600" />
@@ -85,25 +85,3 @@ const experience = [
     }
   </div>
 </section>
-
-<script>
-  import gsap from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  // Use batch to handle staggering of elements that enter view together
-  ScrollTrigger.batch(".experience-item", {
-    start: "top 80%",
-    onEnter: (elements) => {
-      gsap.to(elements, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power3.out",
-      });
-    },
-    once: true,
-  });
-</script>

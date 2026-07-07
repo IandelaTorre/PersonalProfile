@@ -27,14 +27,6 @@ type BadgeColor =
   | "neutral"
   | "stone";
 
-// Mapa de colores por tipo de proyecto
-const typeColorMap: Record<string, BadgeColor> = {
-  iOS: "blue",
-  Frontend: "cyan",
-  Backend: "slate",
-  Android: "green",
-};
-
 // Mapa de tags -> color, alineado con tu TechStack
 const tagColorMap: Record<string, BadgeColor> = {
   // iOS
@@ -155,11 +147,13 @@ const projects = [
 
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
     {
-      projects.map((project) => (
+      projects.map((project, i) => (
         <Card
           href={project.url}
           target="_blank"
-          class="project-card h-full opacity-0 translate-y-12 scale-95"
+          rel="noopener noreferrer"
+          class="reveal h-full"
+          style={`--reveal-delay: ${(i % 3) * 120}ms`}
         >
           <div class="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-xl">
             <img
@@ -201,25 +195,3 @@ const projects = [
           >
             {t("projects.ctaProjects")}</a>.</p>
 </section>
-
-<script>
-  import gsap from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  ScrollTrigger.batch(".project-card", {
-    start: "top 80%",
-    onEnter: (elements) => {
-      gsap.to(elements, {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power3.out",
-      });
-    },
-    once: true,
-  });
-</script>

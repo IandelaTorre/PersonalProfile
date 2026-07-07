@@ -1,11 +1,6 @@
 import { en } from './en';
 import { es } from './es';
 
-export const LANGUAGES = {
-    en: 'English',
-    es: 'Español',
-};
-
 export const defaultLang = 'en';
 
 export const ui = {

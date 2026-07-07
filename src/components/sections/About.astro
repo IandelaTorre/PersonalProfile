@@ -14,15 +14,14 @@ const hobbies = [
 ];
 ---
 
-<section id="about" class="relative mb-24 md:mb-28">
-  <div
-    class="about-container min-h-screen sm:h-screen flex flex-col items-center justify-start pt-32 sm:justify-center sm:pt-0 overflow-hidden dark:bg-neutral-900"
-  >
+<section
+  id="about"
+  class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto"
+>
+  <div class="flex flex-col items-center text-center">
     <!-- Header: Avatar + Name -->
-    <div class="about-header flex flex-col items-center z-10">
-      <h2
-        class="about-name text-3xl sm:text-5xl font-bold text-gray-800 dark:text-white"
-      >
+    <div class="reveal flex flex-col items-center">
+      <h2 class="text-3xl sm:text-5xl font-bold text-gray-800 dark:text-white">
         {t("about.name")}
       </h2>
       <Image
@@ -30,14 +29,12 @@ const hobbies = [
         width={512}
         height={512}
         alt="Ian Axel Perez de la Torre"
-        class="about-avatar w-40 h-40 sm:w-64 sm:h-64 mt-6 rounded-full object-cover shadow-2xl border-4 border-white dark:border-neutral-800 bg-amber-50"
+        class="w-40 h-40 sm:w-56 sm:h-56 mt-6 rounded-full object-cover shadow-2xl border-4 border-white dark:border-neutral-800 bg-amber-50"
       />
     </div>
 
     <!-- Content: Description + Hobbies -->
-    <div
-      class="about-content relative sm:absolute sm:top-1/2 mt-10 sm:mt-0 sm:pt-32 opacity-0 text-center max-w-2xl px-4 translate-y-20"
-    >
+    <div class="reveal max-w-2xl mt-10" style="--reveal-delay: 150ms">
       <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">
         {t("about.title")}
       </h3>
@@ -60,88 +57,3 @@ const hobbies = [
     </div>
   </div>
 </section>
-
-<script>
-  import gsap from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  const mm = gsap.matchMedia();
-
-  mm.add("(min-width: 640px)", () => {
-    // Desktop Animation
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#about",
-        start: "top top",
-        end: "+=300",
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
-      },
-    });
-
-    tl.to(".about-avatar", {
-      scale: 0.25,
-      y: -window.innerHeight * 0.35,
-      duration: 1,
-    })
-      .to(
-        ".about-name",
-        {
-          scale: 1.2,
-          y: -window.innerHeight * 0.35,
-          duration: 1,
-        },
-        "<",
-      )
-      .to(
-        ".about-content",
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-        },
-        "-=0.5",
-      );
-  });
-
-  mm.add("(max-width: 639px)", () => {
-    // Mobile Animation
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#about",
-        start: "top top",
-        end: "+=200",
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
-      },
-    });
-
-    tl.to(".about-avatar", {
-      scale: 0.3,
-      y: -window.innerHeight * 0.2,
-      duration: 1,
-    })
-      .to(
-        ".about-name",
-        {
-          scale: 1.1,
-          y: -window.innerHeight * 0.2,
-          duration: 1,
-        },
-        "<",
-      )
-      .to(
-        ".about-content",
-        {
-          opacity: 1,
-          y: -50,
-          duration: 1,
-        },
-        "-=0.5",
-      );
-  });
-</script>
