@@ -216,6 +216,8 @@ const projects = [
               class="w-full h-48 object-cover rounded-xl transition-transform duration-500 hover:scale-105"
               src={project.image}
               alt={project.title}
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div class="flex flex-col h-full">

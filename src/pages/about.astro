@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import { Image } from 'astro:assets';
+import beisDiablos from '../assets/images/about/beis-diablos.webp';
+import malinche from '../assets/images/about/malinche.webp';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -28,7 +30,8 @@ const t = useTranslations(lang);
           <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.howIWork.title')}</h2>
           <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.howIWork.p1')}</p>
           <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.howIWork.p2')}</p>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.howIWork.p3')}</div>
+          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.howIWork.p3')}</p>
+        </div>
 
         <div class="space-y-10">
           <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.beyondCode.title')}</h2>
@@ -39,7 +42,16 @@ const t = useTranslations(lang);
               <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.beyondCode.p2')}</p>
             </div>
             <figure>
-              <video class="w-full object-cover rounded-xl" src="/images/about/futbol.mp4" autoplay loop muted playsinline></video>
+              <video
+                class="w-full object-cover rounded-xl bg-gray-100 dark:bg-neutral-800"
+                data-src="/images/about/futbol.mp4"
+                width="1920"
+                height="772"
+                preload="none"
+                loop
+                muted
+                playsinline
+              ></video>
               <figcaption class="mt-3 text-sm text-center text-gray-500 dark:text-neutral-500">
                 {t('about.beyondCode.caption1')}
               </figcaption>
@@ -48,7 +60,7 @@ const t = useTranslations(lang);
 
           <div class="grid md:grid-cols-2 gap-6 items-center">
             <figure class="order-1 md:order-none">
-              <Image height={30} width={30} class="w-full object-cover rounded-xl" src="/images/about/beis-diablos.webp" alt="Diablos Rojos" />
+              <Image class="w-full object-cover rounded-xl" src={beisDiablos} alt="Diablos Rojos del México" />
               <figcaption class="mt-3 text-sm text-center text-gray-500 dark:text-neutral-500">
                 Diablos Rojos del México
               </figcaption>
@@ -63,7 +75,7 @@ const t = useTranslations(lang);
               <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.beyondCode.p4')}</p>
             </div>
             <figure>
-              <Image height={30} width={30} class="w-full object-cover rounded-xl" src="/images/about/malinche.webp" alt="La Malinche" />
+              <Image class="w-full object-cover rounded-xl" src={malinche} alt="La Malinche" />
               <figcaption class="mt-3 text-sm text-center text-gray-500 dark:text-neutral-500">
                 La Malinche - Tlaxcala, México.
               </figcaption>
@@ -74,16 +86,32 @@ const t = useTranslations(lang);
         <div class="space-y-3">
           <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{t('about.lookingFor.title')}</h2>
           <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.lookingFor.p1')}</p>
-          <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">
-            <ul class="list-disc list-inside space-y-2 text-lg text-gray-800 dark:text-neutral-200">
-              <li class="text-justify">{t('about.lookingFor.l1')}</li>
-              <li class="text-justify">{t('about.lookingFor.l2')}</li>
-              <li class="text-justify">{t('about.lookingFor.l3')}</li>
-            </ul>
-          </p>
+          <ul class="list-disc list-inside space-y-2 text-lg text-gray-800 dark:text-neutral-200">
+            <li class="text-justify">{t('about.lookingFor.l1')}</li>
+            <li class="text-justify">{t('about.lookingFor.l2')}</li>
+            <li class="text-justify">{t('about.lookingFor.l3')}</li>
+          </ul>
           <p class="text-lg text-justify text-gray-800 dark:text-neutral-200">{t('about.lookingFor.p2')}</p>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    // Defer loading the 8.8MB video until it scrolls into view
+    const video = document.querySelector<HTMLVideoElement>("video[data-src]");
+    if (video) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting && video.dataset.src) {
+            video.src = video.dataset.src;
+            video.play().catch(() => {});
+            io.disconnect();
+          }
+        },
+        { rootMargin: "200px" },
+      );
+      io.observe(video);
+    }
+  </script>
 </BaseLayout>
