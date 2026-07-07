@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  /** Editorial section number, e.g. "01" */
+  number?: string;
+  /** Heading level for the title */
+  as?: "h1" | "h2";
+}
+
+const { title, subtitle, number, as: Heading = "h2" } = Astro.props;
+---
+
+<div class="max-w-2xl mb-10 lg:mb-14">
+  {
+    number && (
+      <p
+        class="flex items-center gap-3 mb-3 text-sm font-semibold tracking-[0.2em] text-blue-600 dark:text-blue-400"
+        aria-hidden="true"
+      >
+        {number}
+        <span class="h-px w-12 bg-blue-600/30 dark:bg-blue-400/30" />
+      </p>
+    )
+  }
+  <Heading
+    class="text-3xl font-bold tracking-tight md:text-4xl text-gray-900 dark:text-white text-balance"
+  >
+    {title}
+  </Heading>
+  {
+    subtitle && (
+      <p class="mt-2 text-gray-600 dark:text-neutral-400">{subtitle}</p>
+    )
+  }
+</div>

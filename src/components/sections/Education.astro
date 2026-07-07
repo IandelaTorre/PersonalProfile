@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import SpotlightCard from "../ui/SpotlightCard.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
 import { getLang, useTranslations } from "../../i18n/utils";
 
 const lang = getLang(Astro.currentLocale);
@@ -15,11 +16,7 @@ const education = (await getCollection("education")).sort(
   id="education"
   class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto"
 >
-  <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-    <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
-      {t("education.title")}
-    </h2>
-  </div>
+  <SectionHeader number="04" title={t("education.title")} />
 
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
     {

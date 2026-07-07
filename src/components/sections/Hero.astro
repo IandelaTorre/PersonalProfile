@@ -8,75 +8,70 @@ const t = useTranslations(lang);
 
 <section
   id="hero"
-  class="relative min-h-screen flex flex-col justify-center items-center overflow-hidden"
+  class="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden"
 >
-  <div class="absolute inset-0 z-[-1]">
+  <!-- Background: technical grid + one soft accent glow -->
+  <div class="absolute inset-0 -z-10" aria-hidden="true">
+    <div class="hero-grid absolute inset-0"></div>
     <div
-      class="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] opacity-50 dark:opacity-30 blur-3xl bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)]"
+      class="absolute -top-40 right-[-15%] w-[42rem] h-[42rem] rounded-full bg-blue-500/10 dark:bg-blue-500/[0.07] blur-3xl"
     >
-    </div>
-    <div
-      class="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-neutral-900 dark:via-neutral-900 dark:to-neutral-900 opacity-80"
-    >
-    </div>
-    <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
-      <div
-        class="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob bg-purple-300 dark:bg-purple-900"
-      >
-      </div>
-      <div
-        class="absolute -top-[20%] -right-[10%] w-[70%] h-[70%] rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-2000 bg-yellow-300 dark:bg-blue-900"
-      >
-      </div>
-      <div
-        class="absolute -bottom-[20%] left-[20%] w-[70%] h-[70%] rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-4000 bg-pink-300 dark:bg-indigo-900"
-      >
-      </div>
     </div>
   </div>
 
-  <div
-    class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center"
-  >
-    <div class="max-w-3xl mx-auto">
+  <div class="max-w-[85rem] w-full mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <div class="max-w-3xl">
+      <span
+        class="inline-flex items-center gap-x-2 rounded-full border border-gray-200 bg-white/60 py-1.5 px-3 text-sm text-gray-700 backdrop-blur-sm dark:border-neutral-700 dark:bg-white/5 dark:text-neutral-300"
+      >
+        <span class="relative flex h-2 w-2">
+          <span
+            class="absolute inline-flex h-full w-full motion-safe:animate-ping rounded-full bg-emerald-400 opacity-75"
+          ></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"
+          ></span>
+        </span>
+        {t("hero.ready")}
+      </span>
+
       <h1
-        class="block font-bold text-gray-800 text-5xl md:text-6xl lg:text-7xl dark:text-neutral-200 tracking-tight"
+        class="mt-6 text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 dark:text-white text-balance"
       >
         {t("hero.title")}
       </h1>
-    </div>
 
-    <div class="mt-5 max-w-3xl mx-auto">
-      <p class="text-xl text-gray-600 dark:text-neutral-400">
+      <p
+        class="mt-6 text-lg sm:text-xl text-gray-600 dark:text-neutral-400 max-w-xl text-pretty"
+      >
         {t("hero.subtitle")}
       </p>
-    </div>
 
-    <div class="mt-10 gap-3 flex justify-center">
-      <Button href="#projects" variant="primary">
-        {t("hero.ctaProjects")}
-        <svg
-          class="flex-shrink-0 w-4 h-4"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg
-        >
-      </Button>
-      <Button href="/docs/resume-iOS-Ian.pdf" variant="outline" download>
-        {t("hero.ctaCV")}
-      </Button>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <Button href="#projects" variant="primary">
+          {t("hero.ctaProjects")}
+          <svg
+            class="flex-shrink-0 w-4 h-4"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg
+          >
+        </Button>
+        <Button href="/docs/resume-iOS-Ian.pdf" variant="outline" download>
+          {t("hero.ctaCV")}
+        </Button>
+      </div>
     </div>
   </div>
 
   <!-- Scroll Indicator -->
   <div
-    class="absolute bottom-20 left-1/2 -translate-x-1/2 motion-safe:animate-bounce z-20"
+    class="absolute bottom-10 left-1/2 -translate-x-1/2 motion-safe:animate-bounce"
   >
     <a
       href="#tech-stack"
@@ -99,40 +94,24 @@ const t = useTranslations(lang);
     </a>
   </div>
 
-  <!-- Bottom Fade Transition -->
-  <div
-    class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white dark:from-neutral-900 to-transparent z-10"
-  >
-  </div>
-
   <style>
-    @keyframes blob {
-      0% {
-        transform: translate(0px, 0px) scale(1);
-      }
-      33% {
-        transform: translate(30px, -50px) scale(1.1);
-      }
-      66% {
-        transform: translate(-20px, 20px) scale(0.9);
-      }
-      100% {
-        transform: translate(0px, 0px) scale(1);
-      }
+    .hero-grid {
+      --grid-line: rgb(0 0 0 / 0.045);
+      background-image:
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+      background-size: 3rem 3rem;
+      mask-image: radial-gradient(
+        ellipse 90% 70% at 50% 0%,
+        black 30%,
+        transparent 100%
+      );
     }
-    .animate-blob {
-      animation: blob 7s infinite;
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .animate-blob {
-        animation: none;
+
+    @media (prefers-color-scheme: dark) {
+      .hero-grid {
+        --grid-line: rgb(255 255 255 / 0.05);
       }
-    }
-    .animation-delay-2000 {
-      animation-delay: 2s;
-    }
-    .animation-delay-4000 {
-      animation-delay: 4s;
     }
   </style>
 </section>

@@ -1,6 +1,7 @@
 ---
 import Badge from "../ui/Badge.astro";
 import SpotlightCard from "../ui/SpotlightCard.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
 import { getLang, useTranslations } from "../../i18n/utils";
 import type { BadgeColor } from "../../lib/badge-colors";
 
@@ -86,11 +87,7 @@ const stack: { category: string; items: { name: string; color: BadgeColor }[] }[
   id="tech-stack"
   class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto"
 >
-  <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-    <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
-      {t("techStack.title")}
-    </h2>
-  </div>
+  <SectionHeader number="01" title={t("techStack.title")} />
 
   <div class="flex flex-wrap justify-center gap-6" id="tech-stack-grid">
     {
