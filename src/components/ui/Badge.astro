@@ -1,26 +1,9 @@
 ---
+import type { BadgeColor } from "../../lib/badge-colors";
+
 interface Props {
   label: string;
-  color?:
-    | "blue"
-    | "indigo"
-    | "purple"
-    | "pink"
-    | "red"
-    | "orange"
-    | "amber"
-    | "yellow"
-    | "lime"
-    | "green"
-    | "emerald"
-    | "teal"
-    | "cyan"
-    | "sky"
-    | "slate"
-    | "gray"
-    | "zinc"
-    | "neutral"
-    | "stone";
+  color?: BadgeColor;
   class?: string;
 }
 

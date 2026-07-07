@@ -1,0 +1,135 @@
+[
+  {
+    "id": "taskflow",
+    "title": "TaskFlow",
+    "type": "iOS",
+    "url": "https://github.com/IandelaTorre/TaskFlow",
+    "image": "../assets/images/projects/taskflow-banner.webp",
+    "tags": [
+      "Swift",
+      "UIKit",
+      "Storyboards",
+      "Alamofire",
+      "Clean Architecture",
+      "CoreData",
+      "Unit Tests (XCTest)"
+    ],
+    "description": {
+      "en": "A task management app where users can assign tasks to each other, with a clean, modern UI and clear flows. It uses API calls with Alamofire, dependency injection, and coordinators. We use data persistence to store basic user info and temporary data for faster responses. Built with UIKit and MVVM. ",
+      "es": "Una aplicación para asignación de tareas entre usuarios, utilizando un diseño limpio y moderno con flujos claros. Se utilizan llamadas a API con Alamofire, inyección de dependencias y coordinadores. Utilizamos persistencia de datos para almacenar datos básicos del usuario y datos temporales para una respuesta más rápida. Construida con UIKit y MVVM. "
+    },
+    "featured": true,
+    "order": 1
+  },
+  {
+    "id": "my-calculator",
+    "title": "My Calculator",
+    "type": "iOS",
+    "url": "https://github.com/IandelaTorre/MyCalculator",
+    "image": "../assets/images/projects/calculator-banner.webp",
+    "tags": [
+      "Swift",
+      "UIKit",
+      "Storyboards",
+      "MVVM",
+      "DI",
+      "Unit Tests (XCTest)",
+      "Stack Views",
+      "Coordinator"
+    ],
+    "description": {
+      "en": "A basic calculator app with real-time expression evaluation, a simple calculator mode, and another mode for unit conversion. It has a clean, minimal design and is built using UIKit and MVVM. ",
+      "es": "Una aplicación de calculadora de operaciones básicas con evaluación en tiempo real, un modo de calculadora básica y otro modo para convertir unidades. Se utiliza un diseño simple, limpio y moderno utilizando UIKit y MVVM. "
+    },
+    "featured": true,
+    "order": 2
+  },
+  {
+    "id": "coin-converter",
+    "title": "Coin Converter",
+    "type": "iOS",
+    "url": "https://github.com/IandelaTorre/CoinConverter",
+    "image": "../assets/images/projects/coin-converter-banner.webp",
+    "tags": [
+      "Swift",
+      "UIKit",
+      "Storyboards",
+      "MVVM",
+      "DI",
+      "Alamofire",
+      "Unit Tests (XCTest)",
+      "Local Persistence"
+    ],
+    "description": {
+      "en": "A currency converter app that uses a public API to fetch real-time exchange rates. It includes live conversion, currency selection, and is built with UIKit and MVVM. ",
+      "es": "Una aplicación de conversión de monedas que utiliza una API pública para obtener las tasas de cambio en tiempo real. Incluye conversión en tiempo real, selección de monedas y esta construida con UIKit y MVVM. "
+    },
+    "featured": true,
+    "order": 3
+  },
+  {
+    "id": "basic-api",
+    "title": "Basic API",
+    "type": "Backend",
+    "url": "https://github.com/IandelaTorre/BasicAPI",
+    "image": "../assets/images/projects/basic-api-banner.webp",
+    "tags": [
+      "JavaScript",
+      "Prisma",
+      "PostgreSQL",
+      "Express",
+      "REST API",
+      "JWT Auth",
+      "Supabase",
+      "Render"
+    ],
+    "description": {
+      "en": "Backend built with Prisma and Express that exposes endpoints to manage users and tasks. It includes JWT authentication, logging, data validation, and error handling. I created this project to have my own “public” API. Designed to be scalable and easy to maintain. ",
+      "es": "Backend construido con Prisma y Express, que ofrece endpoints para gestionar usuarios y tareas. Incluye autenticación JWT, gestión con logs, validación de datos y manejo de errores. Proyecto creado con la finalidad de tener mi propia API 'pública'. Diseñado para ser escalable y fácil de mantener. "
+    },
+    "featured": false,
+    "order": 4
+  },
+  {
+    "id": "personal-website",
+    "title": "Personal Website",
+    "type": "Frontend",
+    "url": "https://github.com/IandelaTorre/PersonalProfile",
+    "image": "../assets/images/projects/personal-website-banner.webp",
+    "tags": [
+      "Astro",
+      "Tailwind CSS",
+      "TypeScript",
+      "i18n",
+      "Markdown",
+      "Vercel"
+    ],
+    "description": {
+      "en": "Personal website built with Astro and Tailwind CSS. It includes sections about me, my experience, featured projects, and a small technical notes/blog area. It's optimized for performance, SEO, and accessibility, with support for dark mode, responsive design, and multiple languages. ",
+      "es": "Página web personal construida con Astro y Tailwind CSS. Presenta secciones sobre mí, mi experiencia, proyectos destacados y un blog de notas técnicas. Optimizada para rendimiento, SEO y accesibilidad, con soporte para modo oscuro, diseño responsivo e idiomas. "
+    },
+    "featured": false,
+    "order": 5
+  },
+  {
+    "id": "memorama-android",
+    "title": "Memorama App Android",
+    "type": "Android",
+    "url": "https://github.com/IandelaTorre/ETSMemorama",
+    "image": "../assets/images/projects/memorama-android-banner.webp",
+    "tags": [
+      "Android",
+      "Kotlin",
+      "MVVM",
+      "SQLite",
+      "Google Drive API",
+      "Clean Architecture"
+    ],
+    "description": {
+      "en": "A memory game app for Android with different difficulty levels, a timer, and a scoring system. Built with Android Studio and Kotlin, using SQLite for data persistence and Google Drive for cloud backups. ",
+      "es": "Aplicación de memorama para Android con diferentes niveles de dificultad, temporizador y sistema de puntuación. Construida con Android Studio, kotlin y utiliza SQLite para la persistencia de datos. Respaldos en la nube con Google Drive. "
+    },
+    "featured": false,
+    "order": 6
+  }
+]

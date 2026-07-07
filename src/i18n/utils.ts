@@ -10,19 +10,24 @@ export const ui = {
 
 export type Lang = keyof typeof ui;
 
-export function getLangFromUrl(url: URL) {
-    const [, lang] = url.pathname.split('/');
-    if (lang in ui) return lang as Lang;
+// Union of every dot-path that leads to a string, e.g. "nav.home" | "hero.title" | ...
+type DotPaths<T> = {
+    [K in keyof T & string]: T[K] extends string ? K : `${K}.${DotPaths<T[K]>}`;
+}[keyof T & string];
+
+export type TranslationKey = DotPaths<typeof en>;
+
+/** Coerce Astro.currentLocale into a supported Lang. */
+export function getLang(locale: string | undefined): Lang {
+    if (locale && locale in ui) return locale as Lang;
     return defaultLang;
 }
 
 export function useTranslations(lang: Lang) {
-    return function t(key: string) {
-        const keys = key.split('.');
-        let value: any = ui[lang];
-        for (const k of keys) {
-            value = value?.[k];
-        }
-        return value || key;
-    }
+    return function t(key: TranslationKey): string {
+        const value = key
+            .split('.')
+            .reduce<unknown>((obj, k) => (obj as Record<string, unknown>)?.[k], ui[lang]);
+        return typeof value === 'string' ? value : key;
+    };
 }

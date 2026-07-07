@@ -1,11 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLang, useTranslations } from '../i18n/utils';
 import { Image } from 'astro:assets';
 import beisDiablos from '../assets/images/about/beis-diablos.webp';
 import malinche from '../assets/images/about/malinche.webp';
 
-const lang = getLangFromUrl(Astro.url);
+const lang = getLang(Astro.currentLocale);
 const t = useTranslations(lang);
 ---
 

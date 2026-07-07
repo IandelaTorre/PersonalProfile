@@ -1,4 +1,10 @@
-export const es = {
+import type { Translation } from './en';
+
+export const es: Translation = {
+    meta: {
+        title: 'Ian Axel - Desarrollador iOS & Full-Stack',
+        description: 'Página web personal de Ian Axel Perez de la Torre, desarrollador iOS con experiencia full-stack.',
+    },
     nav: {
         home: 'Inicio',
         about: 'Sobre mí',
@@ -24,30 +30,6 @@ export const es = {
     projects: {
         title: 'Proyectos Destacados',
         viewAll: 'Proyectos más relevantes',
-        proj1: {
-            title: 'TaskFlow',
-            description: 'Una aplicación para asignación de tareas entre usuarios, utilizando un diseño limpio y moderno con flujos claros. Se utilizan llamadas a API con Alamofire, inyección de dependencias y coordinadores. Utilizamos persistencia de datos para almacenar datos básicos del usuario y datos temporales para una respuesta más rápida. Construida con UIKit y MVVM. '
-        },
-        proj2: {
-            title: 'My Calculator',
-            description: 'Una aplicación de calculadora de operaciones básicas con evaluación en tiempo real, un modo de calculadora básica y otro modo para convertir unidades. Se utiliza un diseño simple, limpio y moderno utilizando UIKit y MVVM. ',
-        },
-        proj3: {
-            title: 'Coin Converter',
-            description: 'Una aplicación de conversión de monedas que utiliza una API pública para obtener las tasas de cambio en tiempo real. Incluye conversión en tiempo real, selección de monedas y esta construida con UIKit y MVVM. ',
-        },
-        proj4: {
-            title: 'Basic API',
-            description: "Backend construido con Prisma y Express, que ofrece endpoints para gestionar usuarios y tareas. Incluye autenticación JWT, gestión con logs, validación de datos y manejo de errores. Proyecto creado con la finalidad de tener mi propia API 'pública'. Diseñado para ser escalable y fácil de mantener. ",
-        },
-        proj5: {
-            title: 'Personal Website',
-            description: 'Página web personal construida con Astro y Tailwind CSS. Presenta secciones sobre mí, mi experiencia, proyectos destacados y un blog de notas técnicas. Optimizada para rendimiento, SEO y accesibilidad, con soporte para modo oscuro, diseño responsivo e idiomas. ',
-        },
-        proj6: {
-            title: 'Memorama App Android',
-            description: 'Aplicación de memorama para Android con diferentes niveles de dificultad, temporizador y sistema de puntuación. Construida con Android Studio, kotlin y utiliza SQLite para la persistencia de datos. Respaldos en la nube con Google Drive. ',
-        },
         moreProjects: "¿Listo para ver más código?",
         more: "¿Quieres ver más? Revisa la",
         ctaProjects: "sección de proyectos",
@@ -55,47 +37,9 @@ export const es = {
     },
     experience: {
         title: 'Experiencia',
-        exp1: {
-            title: "Ikania",
-            role: "Desarrollador Móvil / Full-Stack",
-            period: "2025 - Presente",
-            description: "Actualmente trabajo en un proyecto con React Native enfocado en conectar proveedores con productores a través de una plataforma tipo marketplace para servicios y productos del campo. Trabajo principalmente con React Native, TypeScript, NativeWind y Zustand, desarrollando flujos móviles, componentes de interfaz y manejo de estado para una experiencia orientada al producto, clara, escalable y fácil de usar.",
-            more: "Además de eso, también he contribuido al desarrollo backend de plataformas de auditorías, quejas e inversiones utilizando NestJS, Drizzle, AWS Cognito y Serverless Framework. Mi trabajo ha incluido el diseño de APIs REST, autenticación basada en roles, patrones compartidos de validación y respuestas, e implementación de servicios para cálculo de préstamos con Python y NumPy, colaborando de cerca con el equipo para mantener una arquitectura e integraciones consistentes en todo el stack.",
-        },
-        exp2: {
-            title: "Wundertec",
-            role: "Desarrollador Móvil / Full-Stack",
-            description: "Trabajé en una aplicación móvil con React Native para renta de vehículos, utilizando React Native y TypeScript para construir flujos orientados al usuario y experiencias móviles alrededor del proceso de renta. Esto me permitió fortalecer mi experiencia en desarrollo de interfaces móviles, componentes reutilizables y una visión más enfocada en producto, colaborando al mismo tiempo en requerimientos funcionales y detalles de implementación.",
-            more: "En paralelo, contribuí como desarrollador full-stack en un sistema de gestión para un taller masivo de vehículos y en una plataforma de asistencia médica. En ambos proyectos mejoré flujos de usuario, responsividad y manejo de datos en el frontend con React, Tailwind y Ant Design, además de trabajar en la lógica backend y acceso a datos con Express y Prisma para mantener los sistemas alineados con las necesidades del negocio y fáciles de mantener.",
-        },
-        exp3: {
-            title: "TelcoPS",
-            role: "Desarrollador Android",
-            description: "Trabajé en una aplicación móvil Android para la gestión interna de un almacén, organizada en familias, subfamilias y Configuration Items (CI) para tener un mejor control del inventario. Cada entidad contaba con su CRUD y los cambios pasaban por un flujo de aprobación antes de aplicarse. Al crear un CI se generaba un código QR que, al escanearlo, llevaba directamente al ítem correspondiente, tanto desde la app móvil como desde la versión web. ",
-            more: "Mi trabajo se centró en migrar diferentes pantallas y servicios a una arquitectura basada en MVVM con Clean Architecture, mejorando la separación de responsabilidades y la mantenibilidad del código. Implementé un manejo de errores más robusto para evitar cierres inesperados de la app y mejorar la experiencia del usuario, además de ajustar el flujo de redirección para que el escaneo del QR siempre llevara al CI correcto. También realicé mejoras visuales y correcciones de diseño para alinear la interfaz con las guías de Material Design. ",
-        },
     },
     education: {
         title: 'Educación y Cursos',
-        ed1: {
-            title: "Ingeniería en Sistemas Computacionales",
-            type: "Formal",
-        },
-        ed2: {
-            type: "Curso",
-        },
-        ed3: {
-            type: "Curso",
-        },
-        ed4: {
-            type: "Curso",
-        },
-        ed5: {
-            type: "Curso",
-        },
-        ed6: {
-            type: "Curso",
-        },
         more: {
             title: "Más",
         },
@@ -156,36 +100,6 @@ export const es = {
         }
     },
     notes: {
-        note1: {
-            title: "The Future of SwiftUI Development: From Architecture Choices to AI Integration",
-            date: "Aug 11, 2025",
-            excerpt: "Este artículo reciente resume tendencias en la comunidad iOS, como la evolución de patrones arquitectónicos en SwiftUI. Por ejemplo, cuestiona el uso extensivo de MVVM en cada vista, señalando que puede añadir complejidad innecesaria; en su lugar, SwiftUI permite inyectar servicios globalmente vía @Environment para evitar ViewModels redundantes y mantener las vistas más simples. ",
-        },
-        note2: {
-            title: "Apple Presenta Xcode 26 con IA Nativa, ChatGPT y Live Translation para Desarrolladores",
-            date: "Jun 10, 2025",
-            excerpt: "Este artículo resume las novedades para Xcode 26, que incluyen integración nativa con IA y ChatGPT para ayudar a los desarrolladores a escribir código más rápido y con menos errores. También se destaca la función de traducción en vivo, que facilita la localización de aplicaciones para múltiples idiomas directamente desde el IDE.",
-        },
-        note3: {
-            title: "La importancia de las arquitecturas modulares en las aplicaciones móviles",
-            date: "May 14, 2024",
-            excerpt: "Este artículo en español enfatiza por qué una buena arquitectura técnica es clave en proyectos móviles. Señala que a menudo se prioriza la experiencia de usuario y el diseño, descuidando la calidad del código; el resultado son apps que funcionan al inicio pero con el tiempo se vuelven difíciles de mantener y ampliar, volviéndose proyectos en los que 'nadie quiere trabajar'. ",
-        },
-        note4: {
-            title: "iOS App Store Submission Tutorial",
-            date: "Sept 8, 2025",
-            excerpt: "Este vídeo tutorial en YouTube ofrece una guía paso a paso sobre cómo preparar y enviar una aplicación iOS a la App Store. Cubre aspectos clave como la configuración del proyecto en Xcode, la creación de un perfil de aprovisionamiento, la generación de un archivo IPA y el uso de App Store Connect para gestionar la publicación y distribución de la app. ",
-        },
-        note5: {
-            title: "Patrones de diseño",
-            date: "Dec 5, 2025",
-            excerpt: "Esta página web ofrece una explicación muy completa de muchos patrones de diseño utilizado en el desarrollo de software, incluyendo ejemplos claros con ilustraciones y explicaciones paso a paso. Es un recurso valioso para desarrolladores que buscan entender cómo aplicar estos patrones en sus proyectos para mejorar la calidad y mantenibilidad del código. Si quieres aprender de patrones de diseño, esta es una referencia que tienes que consultar. ",
-        },
-        note6: {
-            title: "Codewars",
-            date: "Dec 5, 2025",
-            excerpt: "Esta plataforma en línea ofrece una amplia variedad de desafíos de programación (katas) que permiten a los desarrolladores mejorar sus habilidades en diferentes lenguajes de programación. Los usuarios pueden resolver problemas de diversos niveles de dificultad, desde principiantes hasta expertos, y comparar sus soluciones con las de otros miembros de la comunidad. Es una excelente manera de practicar y aprender nuevas técnicas de codificación mientras se compite amistosamente con otros programadores. ",
-        },
         more: {
             title: "Presiona para leer más",
         }
@@ -199,6 +113,5 @@ export const es = {
     footer: {
         title: "Desarrollador iOS & Full-Stack",
         rights: "Todos los derechos reservados.",
-
     },
 };

@@ -1,4 +1,8 @@
 export const en = {
+    meta: {
+        title: 'Ian Axel - iOS & Full-Stack Developer',
+        description: 'Personal website of Ian Axel Perez de la Torre, iOS developer with full-stack experience.',
+    },
     nav: {
         home: 'Home',
         about: 'About',
@@ -24,30 +28,6 @@ export const en = {
     projects: {
         title: 'Featured Projects',
         viewAll: 'Most Relevant Projects',
-        proj1: {
-            title: 'TaskFlow',
-            description: 'A task management app where users can assign tasks to each other, with a clean, modern UI and clear flows. It uses API calls with Alamofire, dependency injection, and coordinators. We use data persistence to store basic user info and temporary data for faster responses. Built with UIKit and MVVM. ',
-        },
-        proj2: {
-            title: 'My Calculator',
-            description: 'A basic calculator app with real-time expression evaluation, a simple calculator mode, and another mode for unit conversion. It has a clean, minimal design and is built using UIKit and MVVM. ',
-        },
-        proj3: {
-            title: 'Coin Converter',
-            description: 'A currency converter app that uses a public API to fetch real-time exchange rates. It includes live conversion, currency selection, and is built with UIKit and MVVM. ',
-        },
-        proj4: {
-            title: 'Basic API',
-            description: "Backend built with Prisma and Express that exposes endpoints to manage users and tasks. It includes JWT authentication, logging, data validation, and error handling. I created this project to have my own “public” API. Designed to be scalable and easy to maintain. ",
-        },
-        proj5: {
-            title: 'Personal Website',
-            description: "Personal website built with Astro and Tailwind CSS. It includes sections about me, my experience, featured projects, and a small technical notes/blog area. It's optimized for performance, SEO, and accessibility, with support for dark mode, responsive design, and multiple languages. ",
-        },
-        proj6: {
-            title: 'Memorama App Android',
-            description: 'A memory game app for Android with different difficulty levels, a timer, and a scoring system. Built with Android Studio and Kotlin, using SQLite for data persistence and Google Drive for cloud backups. ',
-        },
         moreProjects: "Ready to see more code?",
         more: "Want to see more? Check out the",
         ctaProjects: "projects section",
@@ -55,47 +35,9 @@ export const en = {
     },
     experience: {
         title: 'Experience',
-        exp1: {
-            title: "Ikania",
-            role: "Mobile Developer / Full-Stack Developer",
-            period: "2025 - Present",
-            description: "I’m currently working on a React Native project focused on connecting service providers with producers through a marketplace-style platform for agricultural services and products. I work mainly with React Native, TypeScript, NativeWind, and Zustand, building mobile flows, UI components, and state management for a product-oriented experience designed to be clear, scalable, and easy to use.",
-            more: "Alongside that, I have also contributed to backend development for audit, complaints, and investment platforms using NestJS, Drizzle, AWS Cognito, and Serverless Framework. My work included designing REST APIs, role-based authentication, shared validation and response patterns, and implementing loan calculation services with Python and NumPy, while collaborating closely with the team to keep architecture and integrations consistent across the stack.",
-        },
-        exp2: {
-            title: "Wundertec",
-            role: "Mobile Developer / Full-Stack Developer",
-            description: "I worked on a React Native mobile app for vehicle rentals, using React Native and TypeScript to build user-facing flows and mobile experiences around the rental process. This helped me strengthen my experience in mobile UI development, reusable components, and app-oriented thinking while collaborating on product requirements and implementation details.",
-            more: "In parallel, I contributed as a full-stack developer to a large-scale vehicle workshop management system and a medical assistance platform. Across both projects, I improved user flows, responsiveness, and data handling in the frontend with React, Tailwind, and Ant Design, while also working on backend logic and data access with Express and Prisma to keep the systems maintainable and aligned with business needs.",
-        },
-        exp3: {
-            title: "TelcoPS",
-            role: "Android Developer",
-            description: "I worked on an internal warehouse management Android app, structured around families, sub-families, and Configuration Items (CIs) to provide better inventory control. Each entity had its own CRUD, and any change went through an approval workflow before being applied. When creating a CI, the system generated a QR code that, when scanned, took the user directly to the corresponding item, both from the mobile app and the web version. ",
-            more: "My work focused on migrating several screens and services to an MVVM-based Clean Architecture, improving separation of concerns and making the codebase easier to maintain. I implemented more robust error handling to prevent crashes and improve the overall user experience, and refined the QR flow so that scanning always routed the user to the correct CI. I also made visual and layout improvements to better align the UI with Material Design guidelines. ",
-        },
     },
     education: {
         title: 'Education & Courses',
-        ed1: {
-            title: "Computational Systems Engineering",
-            type: "Formal",
-        },
-        ed2: {
-            type: "Course",
-        },
-        ed3: {
-            type: "Course",
-        },
-        ed4: {
-            type: "Course",
-        },
-        ed5: {
-            type: "Course",
-        },
-        ed6: {
-            type: "Course",
-        },
         more: {
             title: "More",
         },
@@ -156,36 +98,6 @@ export const en = {
         }
     },
     notes: {
-        note1: {
-            title: "The Future of SwiftUI Development: From Architecture Choices to AI Integration",
-            date: "Aug 11, 2025",
-            excerpt: "This recent article summarizes trends in the iOS community, such as the evolution of architectural patterns in SwiftUI. For example, it questions the extensive use of MVVM in each view, pointing out that it can add unnecessary complexity; instead, SwiftUI allows services to be injected globally via @Environment to avoid redundant ViewModels and keep views simpler. ",
-        },
-        note2: {
-            title: "Apple Presenta Xcode 26 con IA Nativa, ChatGPT y Live Translation para Desarrolladores",
-            date: "Jun 10, 2025",
-            excerpt: "This article summarizes the new features for Xcode 26, which include native integration with AI and ChatGPT to help developers write code faster and with fewer errors. It also highlights the live translation feature, which makes it easy to localize applications for multiple languages directly from the IDE. ",
-        },
-        note3: {
-            title: "La importancia de las arquitecturas modulares en las aplicaciones móviles",
-            date: "May 14, 2024",
-            excerpt: "This article in Spanish emphasizes why good technical architecture is key in mobile projects. It points out that user experience and design are often prioritized, neglecting code quality; the result is apps that work at first but over time become difficult to maintain and expand, turning into projects that 'no one wants to work on'. ",
-        },
-        note4: {
-            title: "iOS App Store Submission Tutorial",
-            date: "Sept 8, 2025",
-            excerpt: "This YouTube tutorial video offers a step-by-step guide on how to prepare and submit an iOS application to the App Store. It covers key aspects such as project setup in Xcode, creating a provisioning profile, generating an IPA file, and using App Store Connect to manage the app's publication and distribution. ",
-        },
-        note5: {
-            title: "Design Patterns",
-            date: "Dec 5, 2025",
-            excerpt: "This webpage provides a very comprehensive explanation of many design patterns used in software development, including clear examples with illustrations and step-by-step explanations. It's a valuable resource for developers looking to understand how to apply these patterns in their projects to improve code quality and maintainability. If you want to learn about design patterns, this is a reference you have to check out. ",
-        },
-        note6: {
-            title: "Codewars",
-            date: "Dec 5, 2025",
-            excerpt: "This online platform offers a wide variety of programming challenges (katas) that allow developers to improve their skills in different programming languages. Users can solve problems of various difficulty levels, from beginners to experts, and compare their solutions with those of other community members. It's an excellent way to practice and learn new coding techniques while competing friendly with other programmers. ",
-        },
         more: {
             title: "Click to read more",
         }
@@ -201,3 +113,5 @@ export const en = {
         rights: "All rights reserved.",
     }
 };
+
+export type Translation = typeof en;

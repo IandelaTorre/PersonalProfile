@@ -7,9 +7,13 @@ import Experience from "../components/sections/Experience.astro";
 import Education from "../components/sections/Education.astro";
 import About from "../components/sections/About.astro";
 import Contact from "../components/sections/Contact.astro";
+import { getLang, useTranslations } from "../i18n/utils";
+
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
 ---
 
-<BaseLayout title="Ian Axel - iOS & Full-Stack Developer">
+<BaseLayout title={t("meta.title")} description={t("meta.description")}>
   <Hero />
   <TechStack />
   <Projects />

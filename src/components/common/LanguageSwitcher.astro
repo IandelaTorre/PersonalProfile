@@ -1,7 +1,8 @@
 ---
-import { getLangFromUrl } from "../../i18n/utils";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getLang } from "../../i18n/utils";
 
-const lang = getLangFromUrl(Astro.url);
+const lang = getLang(Astro.currentLocale);
 
 const pathname = Astro.url.pathname;
 const normalized =
@@ -13,8 +14,8 @@ const normalized =
 const basePath =
   lang === "es" ? normalized.replace(/^\/es/, "") || "/" : normalized;
 
-const enUrl = basePath;
-const esUrl = basePath === "/" ? "/es" : `/es${basePath}`;
+const enUrl = getRelativeLocaleUrl("en", basePath);
+const esUrl = getRelativeLocaleUrl("es", basePath);
 
 const links = [
   { code: "es", label: "ES", href: esUrl },

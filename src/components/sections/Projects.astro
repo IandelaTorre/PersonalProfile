@@ -1,135 +1,17 @@
 ---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import { getRelativeLocaleUrl } from "astro:i18n";
 import Card from "../ui/Card.astro";
 import Badge from "../ui/Badge.astro";
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { getLang, useTranslations } from "../../i18n/utils";
+import { getTagColor } from "../../lib/badge-colors";
 
-const lang = getLangFromUrl(Astro.url);
+const lang = getLang(Astro.currentLocale);
 const t = useTranslations(lang);
 
-type BadgeColor =
-  | "blue"
-  | "indigo"
-  | "purple"
-  | "pink"
-  | "red"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "green"
-  | "emerald"
-  | "teal"
-  | "cyan"
-  | "sky"
-  | "slate"
-  | "gray"
-  | "zinc"
-  | "neutral"
-  | "stone";
-
-// Mapa de tags -> color, alineado con tu TechStack
-const tagColorMap: Record<string, BadgeColor> = {
-  // iOS
-  Swift: "orange",
-  UIKit: "indigo",
-  Storyboards: "indigo",
-  "Stack Views": "indigo",
-  MVVM: "slate",
-  "Clean Architecture": "slate",
-  Coordinator: "slate",
-  Coordinators: "slate",
-  DI: "slate",
-  "Dependency Injection": "slate",
-  Alamofire: "red",
-  "Local Persistence": "green",
-  CoreData: "green",
-  "Unit Tests (XCTest)": "amber",
-
-  // Backend
-  JavaScript: "yellow",
-  Prisma: "purple",
-  PostgreSQL: "blue",
-  Express: "gray",
-  "REST API": "zinc",
-  "REST APIs": "zinc",
-  "JWT Auth": "zinc",
-  Supabase: "green",
-  Render: "gray",
-
-  // Frontend / Web
-  Astro: "orange",
-  "Tailwind CSS": "cyan",
-  TypeScript: "blue",
-  i18n: "stone",
-  GSAP: "green",
-  Markdown: "neutral",
-  Preline: "indigo",
-  Vercel: "gray",
-
-  // Android
-  Android: "green",
-  Kotlin: "purple",
-  SQLite: "blue",
-  "Google Drive API": "blue",
-  "Material Design": "pink",
-};
-
-function getTagColor(tag: string): BadgeColor {
-  return tagColorMap[tag] ?? "gray";
-}
-
-const projects = [
-  {
-    title: "TaskFlow",
-    description: t("projects.proj1.description"),
-    tags: [
-      "Swift",
-      "UIKit",
-      "Storyboards",
-      "Alamofire",
-      "Clean Architecture",
-      "CoreData",
-      "Unit Tests (XCTest)",
-    ],
-    image: "/images/projects/taskflow-banner.webp",
-    type: "iOS",
-    url: "https://github.com/IandelaTorre/TaskFlow",
-  },
-  {
-    title: "My Calculator",
-    description: t("projects.proj2.description"),
-    tags: [
-      "Swift",
-      "UIKit",
-      "Storyboards",
-      "MVVM",
-      "DI",
-      "Unit Tests (XCTest)",
-      "Stack Views",
-      "Coordinator",
-    ],
-    image: "/images/projects/calculator-banner.webp",
-    type: "iOS",
-    url: "https://github.com/IandelaTorre/MyCalculator",
-  },
-  {
-    title: "Coin Converter",
-    description: t("projects.proj3.description"),
-    tags: [
-      "Swift",
-      "UIKit",
-      "Storyboards",
-      "MVVM",
-      "DI",
-      "Alamofire",
-      "Unit Tests (XCTest)",
-      "Local Persistence",
-    ],
-    image: "/images/projects/coin-converter-banner.webp",
-    type: "iOS",
-    url: "https://github.com/IandelaTorre/CoinConverter",
-  },
-];
+const projects = (await getCollection("projects", ({ data }) => data.featured))
+  .sort((a, b) => a.data.order - b.data.order);
 ---
 
 <section
@@ -149,33 +31,34 @@ const projects = [
     {
       projects.map((project, i) => (
         <Card
-          href={project.url}
+          href={project.data.url}
           target="_blank"
           rel="noopener noreferrer"
           class="reveal h-full"
           style={`--reveal-delay: ${(i % 3) * 120}ms`}
         >
           <div class="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-xl">
-            <img
+            <Image
               class="w-full h-48 object-cover rounded-xl transition-transform duration-500 hover:scale-105"
-              src={project.image}
-              alt={project.title}
+              src={project.data.image}
+              alt={project.data.title}
+              width={768}
+              height={384}
               loading="lazy"
-              decoding="async"
             />
           </div>
           <div class="flex flex-col h-full">
             <div class="flex justify-between items-center mb-2">
-              <Badge label={project.type} color="gray" />
+              <Badge label={project.data.type} color="gray" />
             </div>
             <h3 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-500">
-              {project.title}
+              {project.data.title}
             </h3>
             <p class="mt-3 text-justify text-gray-600 dark:text-neutral-400 flex-grow">
-              {project.description}
+              {project.data.description[lang]}
             </p>
             <div class="mt-4 flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
+              {project.data.tags.map((tag) => (
                 <Badge label={tag} color={getTagColor(tag)} />
               ))}
             </div>
@@ -184,14 +67,17 @@ const projects = [
       ))
     }
   </div>
-      <p class="mt-6 text-sm text-center text-gray-600 dark:text-neutral-400">{t("projects.more")}
-          <a
-            href={lang === 'en' ? '/projects' : '/es/projects'}
-            class="relative font-medium text-blue-400 hover:text-blue-300
-                  bg-gradient-to-r from-blue-400 to-sky-400
-                  bg-[length:0%_2px] bg-left-bottom bg-no-repeat
-                  transition-all duration-300 ease-out
-                  hover:bg-[length:100%_2px]"
-          >
-            {t("projects.ctaProjects")}</a>.</p>
+  <p class="mt-6 text-sm text-center text-gray-600 dark:text-neutral-400">
+    {t("projects.more")}
+    <a
+      href={getRelativeLocaleUrl(lang, "/projects")}
+      class="relative font-medium text-blue-400 hover:text-blue-300
+            bg-gradient-to-r from-blue-400 to-sky-400
+            bg-[length:0%_2px] bg-left-bottom bg-no-repeat
+            transition-all duration-300 ease-out
+            hover:bg-[length:100%_2px]"
+    >
+      {t("projects.ctaProjects")}</a
+    >.
+  </p>
 </section>

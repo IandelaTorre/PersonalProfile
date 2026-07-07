@@ -1,47 +1,40 @@
 ---
 import { Image } from "astro:assets";
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getLang, useTranslations } from "../../i18n/utils";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 import avatar from "../../assets/images/avatar.png";
 
-const lang = getLangFromUrl(Astro.url);
+const lang = getLang(Astro.currentLocale);
 const t = useTranslations(lang);
 
-const pathname = Astro.url.pathname;
-const normalizedPathName =
-  pathname.length > 1 && pathname.endsWith("/")
-    ? pathname.slice(0, -1)
-    : pathname;
+const normalize = (path: string) =>
+  path.length > 1 && path.endsWith("/") ? path.slice(0, -1) : path;
 
-const isHome = normalizedPathName === "/" || normalizedPathName === "/es";
+const normalizedPathName = normalize(Astro.url.pathname);
+const homeUrl = getRelativeLocaleUrl(lang, "/");
+const isHome = normalizedPathName === normalize(homeUrl);
 
-const base = lang === "en" ? "/" : "/es/";
+const pages = [
+  { path: "/projects", label: t("nav.projects") },
+  { path: "/about", label: t("nav.about") },
+  { path: "/notes", label: t("nav.notes") },
+];
 
 const navLinks = [
   {
-    href: isHome ? "#hero" : `${base}#hero`,
+    href: isHome ? "#hero" : `${homeUrl}#hero`,
     label: t("nav.home"),
     isActive: isHome,
   },
-  {
-    href: lang === "en" ? "/projects" : "/es/projects",
-    label: t("nav.projects"),
-    isActive:
-      normalizedPathName === "/projects" ||
-      normalizedPathName === "/es/projects",
-  },
-  {
-    href: lang === "en" ? "/about" : "/es/about",
-    label: t("nav.about"),
-    isActive:
-      normalizedPathName === "/about" || normalizedPathName === "/es/about",
-  },
-  {
-    href: lang === "en" ? "/notes" : "/es/notes",
-    label: t("nav.notes"),
-    isActive:
-      normalizedPathName === "/notes" || normalizedPathName === "/es/notes",
-  },
+  ...pages.map((page) => {
+    const href = getRelativeLocaleUrl(lang, page.path);
+    return {
+      href,
+      label: page.label,
+      isActive: normalizedPathName === normalize(href),
+    };
+  }),
 ];
 ---
 
@@ -65,13 +58,13 @@ const navLinks = [
         <div class="flex flex-col">
           <a
             class="flex-none text-sm md:text-lg font-bold dark:text-white"
-            href={lang === "en" ? "/" : "/es"}
+            href={homeUrl}
           >
             Ian Axel Perez de la Torre
           </a>
           <a
             class="flex-none text-xs md:text-base text-gray-600 dark:text-neutral-400"
-            href={lang === "en" ? "/" : "/es"}
+            href={homeUrl}
           >
             {t("hero.title")}
           </a>

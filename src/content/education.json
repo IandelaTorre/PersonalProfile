@@ -1,0 +1,92 @@
+[
+  {
+    "id": "escom",
+    "school": "Escuela Superior de Cómputo (ESCOM)",
+    "year": "2019 - 2024",
+    "url": "https://www.escom.ipn.mx/htmls/conocenos/ubicacion.php",
+    "order": 1,
+    "degree": {
+      "en": "Computational Systems Engineering",
+      "es": "Ingeniería en Sistemas Computacionales"
+    },
+    "type": {
+      "en": "Formal",
+      "es": "Formal"
+    }
+  },
+  {
+    "id": "ios-swift-cero-profesional",
+    "school": "Juan Villalvazo, Brais Moure",
+    "year": "2024",
+    "url": "/docs/courses/CertificadoSwift.pdf",
+    "order": 2,
+    "degree": {
+      "en": "iOS y Swift 5.7  Curso Completo Desde Cero a Profesional",
+      "es": "iOS y Swift 5.7  Curso Completo Desde Cero a Profesional"
+    },
+    "type": {
+      "en": "Course",
+      "es": "Curso"
+    }
+  },
+  {
+    "id": "advanced-programming-swift",
+    "school": "Meta",
+    "year": "2025",
+    "url": "https://www.coursera.org/learn/advanced-programming-in-swift/home/module/1",
+    "order": 3,
+    "degree": {
+      "en": "Advanced Programming in Swift",
+      "es": "Advanced Programming in Swift"
+    },
+    "type": {
+      "en": "Course",
+      "es": "Curso"
+    }
+  },
+  {
+    "id": "swiftui-mvvm-maldonado",
+    "school": "Jorge Maldonado",
+    "year": "2025",
+    "url": "/docs/courses/CertificadoJorgeMaldonado.pdf",
+    "order": 4,
+    "degree": {
+      "en": "Aprende a crear apps para iOS 14, iOS 15, iOS 16 y ahora con iOS 17 con SwiftUI, Swift 5.7 y aplicando MVVM",
+      "es": "Aprende a crear apps para iOS 14, iOS 15, iOS 16 y ahora con iOS 17 con SwiftUI, Swift 5.7 y aplicando MVVM"
+    },
+    "type": {
+      "en": "Course",
+      "es": "Curso"
+    }
+  },
+  {
+    "id": "ios-masterclass-petras",
+    "school": "Robert Petras",
+    "year": "2025",
+    "url": "https://www.udemy.com/course/swiftui-masterclass-course-ios-development-with-swift/?couponCode=ACCAGE0923",
+    "order": 5,
+    "degree": {
+      "en": "iOS Development Masterclass 2026 – SwiftUI, SwiftData, AI",
+      "es": "iOS Development Masterclass 2026 – SwiftUI, SwiftData, AI"
+    },
+    "type": {
+      "en": "Course",
+      "es": "Curso"
+    }
+  },
+  {
+    "id": "introduccion-swiftui",
+    "school": "Angel Gómez",
+    "year": "2025",
+    "url": "/docs/courses/CertificadoIntroduccionSwiftUI.pdf",
+    "order": 6,
+    "degree": {
+      "en": "Introducción a SwiftUI",
+      "es": "Introducción a SwiftUI"
+    },
+    "type": {
+      "en": "Course",
+      "es": "Curso"
+    }
+  }
+]

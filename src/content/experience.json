@@ -1,0 +1,66 @@
+[
+  {
+    "id": "ikania",
+    "company": "Ikania",
+    "badge": "Freelance",
+    "order": 1,
+    "role": {
+      "en": "Mobile Developer / Full-Stack Developer",
+      "es": "Desarrollador Móvil / Full-Stack"
+    },
+    "period": {
+      "en": "2025 - Present",
+      "es": "2025 - Presente"
+    },
+    "description": {
+      "en": "I’m currently working on a React Native project focused on connecting service providers with producers through a marketplace-style platform for agricultural services and products. I work mainly with React Native, TypeScript, NativeWind, and Zustand, building mobile flows, UI components, and state management for a product-oriented experience designed to be clear, scalable, and easy to use.",
+      "es": "Actualmente trabajo en un proyecto con React Native enfocado en conectar proveedores con productores a través de una plataforma tipo marketplace para servicios y productos del campo. Trabajo principalmente con React Native, TypeScript, NativeWind y Zustand, desarrollando flujos móviles, componentes de interfaz y manejo de estado para una experiencia orientada al producto, clara, escalable y fácil de usar."
+    },
+    "more": {
+      "en": "Alongside that, I have also contributed to backend development for audit, complaints, and investment platforms using NestJS, Drizzle, AWS Cognito, and Serverless Framework. My work included designing REST APIs, role-based authentication, shared validation and response patterns, and implementing loan calculation services with Python and NumPy, while collaborating closely with the team to keep architecture and integrations consistent across the stack.",
+      "es": "Además de eso, también he contribuido al desarrollo backend de plataformas de auditorías, quejas e inversiones utilizando NestJS, Drizzle, AWS Cognito y Serverless Framework. Mi trabajo ha incluido el diseño de APIs REST, autenticación basada en roles, patrones compartidos de validación y respuestas, e implementación de servicios para cálculo de préstamos con Python y NumPy, colaborando de cerca con el equipo para mantener una arquitectura e integraciones consistentes en todo el stack."
+    }
+  },
+  {
+    "id": "wundertec",
+    "company": "Wundertec",
+    "order": 2,
+    "role": {
+      "en": "Mobile Developer / Full-Stack Developer",
+      "es": "Desarrollador Móvil / Full-Stack"
+    },
+    "period": {
+      "en": "2024 - 2025",
+      "es": "2024 - 2025"
+    },
+    "description": {
+      "en": "I worked on a React Native mobile app for vehicle rentals, using React Native and TypeScript to build user-facing flows and mobile experiences around the rental process. This helped me strengthen my experience in mobile UI development, reusable components, and app-oriented thinking while collaborating on product requirements and implementation details.",
+      "es": "Trabajé en una aplicación móvil con React Native para renta de vehículos, utilizando React Native y TypeScript para construir flujos orientados al usuario y experiencias móviles alrededor del proceso de renta. Esto me permitió fortalecer mi experiencia en desarrollo de interfaces móviles, componentes reutilizables y una visión más enfocada en producto, colaborando al mismo tiempo en requerimientos funcionales y detalles de implementación."
+    },
+    "more": {
+      "en": "In parallel, I contributed as a full-stack developer to a large-scale vehicle workshop management system and a medical assistance platform. Across both projects, I improved user flows, responsiveness, and data handling in the frontend with React, Tailwind, and Ant Design, while also working on backend logic and data access with Express and Prisma to keep the systems maintainable and aligned with business needs.",
+      "es": "En paralelo, contribuí como desarrollador full-stack en un sistema de gestión para un taller masivo de vehículos y en una plataforma de asistencia médica. En ambos proyectos mejoré flujos de usuario, responsividad y manejo de datos en el frontend con React, Tailwind y Ant Design, además de trabajar en la lógica backend y acceso a datos con Express y Prisma para mantener los sistemas alineados con las necesidades del negocio y fáciles de mantener."
+    }
+  },
+  {
+    "id": "telcops",
+    "company": "TelcoPS",
+    "order": 3,
+    "role": {
+      "en": "Android Developer",
+      "es": "Desarrollador Android"
+    },
+    "period": {
+      "en": "2023 - 2024",
+      "es": "2023 - 2024"
+    },
+    "description": {
+      "en": "I worked on an internal warehouse management Android app, structured around families, sub-families, and Configuration Items (CIs) to provide better inventory control. Each entity had its own CRUD, and any change went through an approval workflow before being applied. When creating a CI, the system generated a QR code that, when scanned, took the user directly to the corresponding item, both from the mobile app and the web version. ",
+      "es": "Trabajé en una aplicación móvil Android para la gestión interna de un almacén, organizada en familias, subfamilias y Configuration Items (CI) para tener un mejor control del inventario. Cada entidad contaba con su CRUD y los cambios pasaban por un flujo de aprobación antes de aplicarse. Al crear un CI se generaba un código QR que, al escanearlo, llevaba directamente al ítem correspondiente, tanto desde la app móvil como desde la versión web. "
+    },
+    "more": {
+      "en": "My work focused on migrating several screens and services to an MVVM-based Clean Architecture, improving separation of concerns and making the codebase easier to maintain. I implemented more robust error handling to prevent crashes and improve the overall user experience, and refined the QR flow so that scanning always routed the user to the correct CI. I also made visual and layout improvements to better align the UI with Material Design guidelines. ",
+      "es": "Mi trabajo se centró en migrar diferentes pantallas y servicios a una arquitectura basada en MVVM con Clean Architecture, mejorando la separación de responsabilidades y la mantenibilidad del código. Implementé un manejo de errores más robusto para evitar cierres inesperados de la app y mejorar la experiencia del usuario, además de ajustar el flujo de redirección para que el escaneo del QR siempre llevara al CI correcto. También realicé mejoras visuales y correcciones de diseño para alinear la interfaz con las guías de Material Design. "
+    }
+  }
+]

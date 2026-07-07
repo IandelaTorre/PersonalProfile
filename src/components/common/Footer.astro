@@ -1,7 +1,8 @@
 ---
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getLang, useTranslations } from '../../i18n/utils';
 
-const lang = getLangFromUrl(Astro.url);
+const lang = getLang(Astro.currentLocale);
 const t = useTranslations(lang);
 
 const currentYear = new Date().getFullYear();
@@ -10,7 +11,7 @@ const currentYear = new Date().getFullYear();
 <footer class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto mt-auto border-t border-gray-100 dark:border-neutral-800">
   <div class="text-center">
     <div>
-      <a class="flex-none text-xl font-bold text-black dark:text-white" href={lang === 'en' ? '/' : '/es'} aria-label="Brand">Ian Axel</a>
+      <a class="flex-none text-xl font-bold text-black dark:text-white" href={getRelativeLocaleUrl(lang, '/')} aria-label="Brand">Ian Axel</a>
     </div>
 
     <div class="mt-3">
